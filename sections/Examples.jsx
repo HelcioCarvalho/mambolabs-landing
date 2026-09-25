@@ -1,32 +1,38 @@
-const exStyles = {
-  section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
-  inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 48px', letterSpacing: '-0.02em', maxWidth: 640 },
-  grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 },
-  card: { background: 'var(--surface-card-dark)', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-lg)', padding: 28, boxShadow: 'var(--shadow-card-dark)' },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17, color: 'var(--text-primary-dark)', margin: '0 0 8px' },
-  desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--text-secondary-dark)', margin: 0 },
-};
 const EXAMPLES = [
-  ['bot', 'Assistente comercial inteligente', 'Um agente que consulta produtos, preços, clientes e histórico para ajudar a equipe comercial a responder com mais rapidez.'],
-  ['chat', 'Atendimento conectado ao ERP', 'O cliente pergunta pelo WhatsApp sobre pedido, estoque ou entrega, e a IA consulta o sistema para gerar a resposta.'],
-  ['document', 'Leitura e processamento de documentos', 'A IA recebe contratos, notas ou formulários, extrai informações e envia os dados para o processo correto.'],
-  ['funnel', 'Automação de leads', 'Novos contatos são recebidos, classificados, registrados no CRM e encaminhados automaticamente para o responsável.'],
-  ['book', 'Assistente interno de conhecimento', 'Funcionários consultam políticas, procedimentos e manuais utilizando uma conversa em linguagem natural.'],
-  ['chart', 'Relatórios automáticos', 'Dados são coletados de diferentes sistemas, organizados e enviados periodicamente para os gestores.'],
-  ['shieldCheck', 'Aprovações automatizadas', 'Solicitações são direcionadas aos responsáveis, acompanhadas e registradas sem depender de trocas manuais.'],
-  ['plug', 'Integração entre plataformas', 'Uma informação cadastrada em um sistema é automaticamente validada e transmitida para os demais.'],
-  ['window', 'Portais e sistemas personalizados', 'Criação de ambientes para clientes, fornecedores ou equipes acompanharem informações e processos.'],
+  { icon: 'chat', tag: 'Agente', text: 'Agente conectado ao WhatsApp para atendimento e operações.' },
+  { icon: 'mic', tag: 'Agente', text: 'Agente que analisa reuniões e transforma informações em processos estruturados.' },
+  { icon: 'document', tag: 'Automação', text: 'Automação que consulta documentos no Google Drive e gera relatórios.' },
+  { icon: 'plug', tag: 'Integração', text: 'Integração entre sistemas de gestão de projetos e inteligência artificial.' },
+  { icon: 'tag', tag: 'Automação', text: 'Automação de análise e classificação de documentos.' },
+  { icon: 'chart', tag: 'Dashboard', text: 'Dashboards para acompanhar agentes e processos automatizados.' },
 ];
 function Examples() {
   return (
-    <section id="exemplos" style={exStyles.section} data-screen-label="Exemplos de aplicação">
-      <div style={exStyles.inner}>
-        <h2 style={exStyles.h2}>O que a MamboLabs pode construir para sua empresa?</h2>
-        <div style={exStyles.grid}>
-          {EXAMPLES.map(([icon, t, d]) => (
-            <div key={t} style={exStyles.card}><IconBadge name={icon} size={36} /><h3 style={{ ...exStyles.title, marginTop: 12 }}>{t}</h3><p style={exStyles.desc}>{d}</p></div>
+    <section id="exemplos" className="section" data-screen-label="Exemplos">
+      <div className="container">
+        <div className="head">
+          <div className="head__text">
+            <span className="label reveal">Portfólio</span>
+            <h2 className="h2 reveal" style={{ '--i': 1 }}>Exemplos de entregas</h2>
+          </div>
+        </div>
+        <div className="examples">
+          {EXAMPLES.map((e, i) => (
+            <article key={e.text} className="ex reveal" style={{ '--i': i % 3 }}>
+              <div className="ex__top">
+                <span className="ex__icon"><Icon name={e.icon} size={20} color="var(--accent)" /></span>
+                <span className="chip">{e.tag}</span>
+              </div>
+              <p className="ex__text">{e.text}</p>
+            </article>
           ))}
+          <article className="ex ex--wide reveal">
+            <div className="ex__main">
+              <span className="ex__icon"><Icon name="window" size={20} color="var(--text)" /></span>
+              <p className="ex__text">Sistemas internos desenvolvidos para processos específicos.</p>
+            </div>
+            <span className="chip">Sistema sob medida</span>
+          </article>
         </div>
       </div>
     </section>
