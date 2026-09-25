@@ -1,11 +1,11 @@
 const priceStyles = {
   section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
   inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 48px', letterSpacing: '-0.02em', maxWidth: 640 },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 640 },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 },
   card: { background: 'var(--surface-card-dark)', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-lg)', padding: 32, display: 'flex', flexDirection: 'column', gap: 18 },
-  cardFeat: { background: 'linear-gradient(165deg, rgba(255,122,26,0.14), rgba(139,92,246,0.10))', border: '1px solid var(--accent-500)', boxShadow: 'var(--shadow-glow-accent)' },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20 },
+  cardFeat: { background: 'var(--surface-card-dark-raised)', border: '1px solid var(--accent-500)', boxShadow: 'var(--shadow-glow-accent)' },
+  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 20 },
   desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, margin: 0 },
   list: { display: 'flex', flexDirection: 'column', gap: 8, margin: 0, padding: 0, listStyle: 'none', fontFamily: 'var(--font-body)', fontSize: 14 },
   note: { fontFamily: 'var(--font-body)', fontSize: 13.5, color: 'var(--text-secondary-dark)', textAlign: 'center', marginTop: 32 },
@@ -20,7 +20,7 @@ function Pricing({ Button }) {
     <section id="modelos" style={priceStyles.section} data-screen-label="Modelos de trabalho">
       <div style={priceStyles.inner}>
         <h2 style={priceStyles.h2}>Cada projeto é dimensionado para a sua operação.</h2>
-        <div style={priceStyles.grid}>
+        <div className="mb-grid-3" style={priceStyles.grid}>
           {PLANS.map(([t, d, items, cta, feat]) => (
             <div key={t} style={{ ...priceStyles.card, ...(feat ? priceStyles.cardFeat : {}) }}>
               <h3 style={{ ...priceStyles.title, color: 'var(--white-soft)' }}>{t}</h3>

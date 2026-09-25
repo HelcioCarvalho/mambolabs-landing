@@ -24,27 +24,65 @@ function Icon({ name, size = 22, color = 'var(--accent-500)' }) {
 function IconBadge({ name, size = 40 }) {
   const badge = {
     width: size, height: size, borderRadius: 'var(--radius-md)',
-    background: 'linear-gradient(135deg, rgba(255,122,26,0.16), rgba(255,61,122,0.10))',
-    border: '1px solid rgba(255,122,26,0.25)',
+    background: 'var(--surface-card-dark-raised)',
+    border: '1px solid var(--border-dark)',
     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
   };
-  return <div style={badge}><Icon name={name} size={size * 0.5} /></div>;
+  return <div style={badge}><Icon name={name} size={size * 0.5} color="var(--accent-400)" /></div>;
 }
-const DOT_GRID = [[3,3],[11,3],[19,3],[3,11],[11,11],[19,11],[3,19],[11,19],[19,19]];
-function LogoMark({ size = 32 }) {
+
+/* Pulse — the recurring "chaos resolves into a steady beat" motif.
+   Deterministic (no Math.random) so the drawn path is stable across re-renders. */
+const PULSE_NOISE = [0.9, -0.4, 1, -0.75, 0.3, -1, 0.55, -0.2, 0.85, -0.6, 0.4, -0.9, 0.65, -0.35, 0.95, -0.5];
+function pulsePoints(width, height, { chaosRatio = 0.46, tickEvery = 64, tickWidth = 24, steps = 48 } = {}) {
+  const midY = height / 2;
+  const maxAmp = height * 0.42;
+  const chaosEndX = width * chaosRatio;
+  const pts = [];
+  for (let i = 0; i <= steps; i++) {
+    let x = (i / steps) * width;
+    const settle = Math.min(1, Math.max(0, (x - chaosEndX * 0.25) / (width * 0.42)));
+    const noise = PULSE_NOISE[i % PULSE_NOISE.length];
+    if (settle < 1) x += noise * (width / steps) * 0.85 * (1 - settle);
+    let y = midY;
+    if (settle < 1) y += noise * maxAmp * (1 - settle);
+    if (settle > 0) {
+      const beatX = ((x % tickEvery) + tickEvery) % tickEvery;
+      let beatY = 0;
+      if (beatX > tickEvery - tickWidth) {
+        const bt = (beatX - (tickEvery - tickWidth)) / tickWidth;
+        beatY = Math.sin(bt * Math.PI * 2) * maxAmp * 0.9;
+      }
+      y += beatY * settle;
+    }
+    pts.push([x, y]);
+  }
+  return pts;
+}
+function pulsePath(width, height, opts) {
+  return pulsePoints(width, height, opts).map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+}
+function PulseLine({ width = 640, height = 80, id = 'pulse', from = 'var(--slate-500)', to = 'var(--accent-500)', strokeWidth = 2, opts, style }) {
+  const d = pulsePath(width, height, opts);
   return (
-    <svg width={size} height={size} viewBox="0 0 22 22" style={{ flexShrink: 0 }}>
+    <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="auto" preserveAspectRatio="none" style={{ display: 'block', overflow: 'visible', ...style }}>
       <defs>
-        <linearGradient id="logoMarkGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="var(--accent-400)" />
-          <stop offset="100%" stopColor="var(--accent-alt-500)" />
+        <linearGradient id={id} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor={from} stopOpacity="0.55" />
+          <stop offset="48%" stopColor={from} stopOpacity="0.85" />
+          <stop offset="100%" stopColor={to} />
         </linearGradient>
       </defs>
-      <rect width="22" height="22" rx="6" fill="url(#logoMarkGrad)" />
-      {DOT_GRID.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="1.6" fill="var(--graphite-950)" opacity={i === 4 ? 1 : 0.85} />)}
+      <path d={d} fill="none" stroke={`url(#${id})`} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
+}
+function LogoMark({ size = 32 }) {
+  return <img src="./images/mombolabs-mark.webp" alt="" aria-hidden="true" height={size} width={Math.round(size * 1.35)} style={{ flexShrink: 0, display: 'block' }} />;
 }
 window.Icon = Icon;
 window.IconBadge = IconBadge;
 window.LogoMark = LogoMark;
+window.PulseLine = PulseLine;
+window.pulsePath = pulsePath;
+window.pulsePoints = pulsePoints;

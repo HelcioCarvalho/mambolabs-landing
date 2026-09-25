@@ -3,21 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#15100c">
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-  <meta name="description" content="MamboLabs cria agentes de IA, automações e integrações que conectam sistemas e eliminam tarefas manuais, tornando a operação da sua empresa mais inteligente." />
-  <title>MamboLabs — Inteligência que transforma operações</title>
+  <meta name="description" content="MomboLabs cria agentes de IA, automações e integrações que conectam sistemas e eliminam tarefas manuais, tornando a operação da sua empresa mais inteligente." />
+  <title>MomboLabs — Inteligência que transforma operações</title>
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="MamboLabs — Inteligência que transforma operações" />
+  <meta property="og:title" content="MomboLabs — Inteligência que transforma operações" />
   <meta property="og:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
   <meta property="og:image" content="./images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MamboLabs — Inteligência que transforma operações" />
+  <meta name="twitter:title" content="MomboLabs — Inteligência que transforma operações" />
   <meta name="twitter:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
   <meta name="twitter:image" content="./images/og-image.png" />
   <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/colors.css">
@@ -26,12 +29,27 @@
   <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/styles.css">
   <script src="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/_ds_bundle.js"></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"MamboLabs","description":"Automação de processos, agentes de IA e integração de sistemas para empresas.","areaServed":"BR"}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"MomboLabs","description":"Automação de processos, agentes de IA e integração de sistemas para empresas.","areaServed":"BR"}
   </script>
   <style>
+    body { background: var(--graphite-950); }
     a { color: var(--accent-400); }
     a:hover { color: var(--accent-500); }
+    ::selection { background: var(--accent-500); color: var(--graphite-950); }
+    :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
     @media (prefers-reduced-motion: reduce) { *{ animation: none !important; transition: none !important; } }
+
+    @media (max-width: 860px) {
+      [data-screen-label] { padding-left: 20px !important; padding-right: 20px !important; padding-top: var(--section-py-mobile) !important; padding-bottom: var(--section-py-mobile) !important; }
+      #topo[data-screen-label] { padding-top: 128px !important; }
+      .mb-split, .mb-grid-2, .mb-grid-3, .mb-grid-4, .mb-grid-5, .mb-row { grid-template-columns: 1fr !important; }
+      .mb-hero-artwork { opacity: .34 !important; width: 145% !important; left: 5% !important; right: auto !important; }
+      .mb-visual-grid { grid-template-columns: 1fr !important; }
+      header nav { display: none !important; }
+    }
+    @media (min-width: 861px) and (max-width: 1080px) {
+      .mb-grid-3, .mb-grid-4, .mb-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
+    }
   </style>
 </helmet>
 <div style="background: var(--graphite-950)">

@@ -1,14 +1,15 @@
 const jStyles = {
   section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
   inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 56px', letterSpacing: '-0.02em', maxWidth: 640 },
-  row: { display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 24, position: 'relative' },
-  line: { position: 'absolute', top: 19, left: '10%', right: '10%', height: 2, background: 'var(--border-dark)' },
-  step: { position: 'relative', display: 'flex', flexDirection: 'column', gap: 14 },
-  dot: { width: 40, height: 40, borderRadius: '50%', background: 'var(--accent-500)', color: 'var(--graphite-950)', fontFamily: 'var(--font-display)', fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15, zIndex: 1 },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17, color: 'var(--text-primary-dark)', margin: 0 },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 8px', letterSpacing: 'var(--tracking-tight)', maxWidth: 640 },
+  sub: { fontFamily: 'var(--font-mono)', fontSize: 12.5, letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', color: 'var(--text-tertiary-dark)', margin: '0 0 40px' },
+  lineWrap: { marginBottom: 12 },
+  row: { display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 24 },
+  step: { display: 'flex', flexDirection: 'column', gap: 12, borderTop: '1px solid var(--border-dark)', paddingTop: 18 },
+  num: { fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--accent-400)' },
+  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 17, color: 'var(--text-primary-dark)', margin: 0 },
   desc: { fontFamily: 'var(--font-body)', fontSize: 14, lineHeight: 1.55, color: 'var(--text-secondary-dark)', margin: 0 },
-  footer: { marginTop: 48, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20, color: 'var(--accent-400)', maxWidth: 640 },
+  footer: { marginTop: 48, fontFamily: 'var(--font-display)', fontWeight: 500, fontStyle: 'italic', fontSize: 22, color: 'var(--accent-400)', maxWidth: 640, letterSpacing: 'var(--tracking-tight)' },
 };
 const STEPS = [
   ['Descoberta', 'Conversamos com sua equipe para entender o negócio, os objetivos e os principais desafios.'],
@@ -22,11 +23,14 @@ function Journey() {
     <section id="jornada" style={jStyles.section} data-screen-label="Jornada do cliente">
       <div style={jStyles.inner}>
         <h2 style={jStyles.h2}>Da identificação do problema à solução em operação.</h2>
-        <div style={jStyles.row}>
-          <div style={jStyles.line}></div>
+        <p style={jStyles.sub}>Cinco compassos, do diagnóstico à operação em ritmo próprio.</p>
+        <div style={jStyles.lineWrap}>
+          <PulseLine width={1120} height={46} strokeWidth={1.75} opts={{ chaosRatio: 0.3, tickEvery: 160, tickWidth: 46, steps: 70 }} />
+        </div>
+        <div className="mb-grid-5" style={jStyles.row}>
           {STEPS.map(([t, d], i) => (
             <div key={t} style={jStyles.step}>
-              <span style={jStyles.dot}>{i + 1}</span>
+              <span style={jStyles.num}>{String(i + 1).padStart(2, '0')}</span>
               <h3 style={jStyles.title}>{t}</h3>
               <p style={jStyles.desc}>{d}</p>
             </div>
