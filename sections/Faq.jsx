@@ -10,15 +10,19 @@ const faqData = [
 ];
 function Faq({ Accordion }) {
   const s = {
-    section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
-    inner: { maxWidth: 760, margin: '0 auto' },
-    h2: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-display-md)', color: 'var(--white-soft)', margin: '0 0 40px', letterSpacing: 'var(--tracking-tight)' },
+    section: { padding: 'var(--section-py-desktop) 24px', background: 'var(--paper)' },
+    inner: { maxWidth: 'var(--container-max)', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0,0.7fr) minmax(0,1.3fr)', gap: 64, alignItems: 'start' },
+    h2: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 'var(--text-display-lg)', lineHeight: 'var(--lh-tight)', color: 'var(--ink)', margin: '0 0 16px', letterSpacing: 'var(--tracking-tight)' },
+    p: { fontFamily: 'var(--font-body)', fontSize: 16, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 },
   };
   return (
     <section style={s.section} data-screen-label="FAQ">
-      <div style={s.inner}>
-        <h2 style={s.h2}>Perguntas frequentes</h2>
-        <Accordion items={faqData.map(([q, a]) => ({ q, a }))} />
+      <div className="mb-split" style={s.inner}>
+        <div className="mb-sticky" style={{ position: 'sticky', top: 112 }}>
+          <h2 style={s.h2}>Perguntas frequentes</h2>
+          <p style={s.p}>Não encontrou sua dúvida? <a href="#contato">Fale com a gente</a>.</p>
+        </div>
+        <div className="mb-faq" style={{ borderTop: '1px solid var(--hairline)' }}><Accordion items={faqData.map(([q, a]) => ({ q, a }))} /></div>
       </div>
     </section>
   );

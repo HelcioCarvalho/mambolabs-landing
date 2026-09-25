@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#15100c">
+<meta name="theme-color" content="#ECEEF0">
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <script src="./support.js"></script>
@@ -32,27 +32,55 @@
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"MomboLabs","description":"Automação de processos, agentes de IA e integração de sistemas para empresas.","areaServed":"BR"}
   </script>
   <style>
-    body { background: var(--graphite-950); }
-    a { color: var(--accent-400); }
-    a:hover { color: var(--accent-500); }
-    ::selection { background: var(--accent-500); color: var(--graphite-950); }
-    :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
-    @media (prefers-reduced-motion: reduce) { *{ animation: none !important; transition: none !important; } }
+    html { scrollbar-color: #B9BDAE var(--canvas); }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
+    a { color: var(--olive); text-underline-offset: 3px; }
+    a:hover { color: var(--olive-deep); }
+    ::selection { background: var(--lime); color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 4px; }
+    input::placeholder, textarea::placeholder { color: var(--ink-3); }
+    button[style*="--accent-primary"]:hover, button[style*="var(--accent-primary)"]:hover { filter: brightness(0.96); }
+
+    /* Marca-texto em limão para ênfases em títulos */
+    .mb-mark { background: linear-gradient(transparent 58%, var(--lime) 58%, var(--lime) 92%, transparent 92%); padding: 0 .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+    /* Acordeão do FAQ: ícone legível sobre fundo claro */
+    .mb-faq button > span { background: var(--lime) !important; color: var(--night) !important; border-color: transparent !important; font-weight: 600; }
+    .mb-faq button:hover > span { background: var(--lime-hover) !important; }
+
+    /* Cartões: elevação no hover */
+    .mb-lift { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-standard); }
+    .mb-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--hairline-strong) !important; }
+
+    /* Entrada escalonada do hero */
+    @keyframes mbRise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+    .mb-rise { animation: mbRise .9s var(--ease-out) both; }
+    .mb-rise-1 { animation-delay: .05s } .mb-rise-2 { animation-delay: .15s } .mb-rise-3 { animation-delay: .25s } .mb-rise-4 { animation-delay: .38s }
+
+    /* Revelação ao rolar (só onde o navegador suporta; sem suporte, tudo aparece normalmente) */
+    @supports (animation-timeline: view()) {
+      @keyframes mbReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+      [data-screen-label] h2, .mb-reveal { animation: mbReveal linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+    }
 
     @media (max-width: 860px) {
-      [data-screen-label] { padding-left: 20px !important; padding-right: 20px !important; padding-top: var(--section-py-mobile) !important; padding-bottom: var(--section-py-mobile) !important; }
-      #topo[data-screen-label] { padding-top: 128px !important; }
+      [data-screen-label] { padding-left: 16px !important; padding-right: 16px !important; padding-top: var(--section-py-mobile) !important; padding-bottom: var(--section-py-mobile) !important; }
+      #topo[data-screen-label] { padding-top: 112px !important; padding-bottom: 24px !important; }
       .mb-split, .mb-grid-2, .mb-grid-3, .mb-grid-4, .mb-grid-5, .mb-row { grid-template-columns: 1fr !important; }
-      .mb-hero-artwork { opacity: .34 !important; width: 145% !important; left: 5% !important; right: auto !important; }
       .mb-visual-grid { grid-template-columns: 1fr !important; }
+      .mb-hide-sm { display: none !important; }
       header nav { display: none !important; }
+      .mb-stage-tags { display: none !important; }
+      .mb-sticky { position: static !important; }
+      .mb-stage { padding: 56px 18px 20px !important; border-radius: var(--radius-lg) !important; }
     }
     @media (min-width: 861px) and (max-width: 1080px) {
       .mb-grid-3, .mb-grid-4, .mb-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
     }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
   </style>
 </helmet>
-<div style="background: var(--graphite-950)">
+<div style="background: var(--canvas)">
   <x-import component-from-global-scope="Icon" from="./sections/Icons.jsx" hint-size="0,0"></x-import>
   <x-import component-from-global-scope="Header" from="./sections/Header.jsx" dc-props="{{ dsProps }}" hint-size="100%,72px"></x-import>
   <x-import component-from-global-scope="Hero" from="./sections/Hero.jsx" dc-props="{{ dsProps }}" hint-size="100%,760px"></x-import>

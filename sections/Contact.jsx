@@ -1,14 +1,14 @@
 const cStyles = {
-  section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
-  inner: { maxWidth: 'var(--container-max)', margin: '0 auto', display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 64 },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 20px', letterSpacing: 'var(--tracking-tight)' },
-  p: { fontFamily: 'var(--font-body)', fontSize: 16, lineHeight: 1.65, color: 'var(--text-secondary-dark)', margin: '0 0 32px' },
-  trust: { display: 'flex', flexDirection: 'column', gap: 12, fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--text-secondary-dark)' },
-  trustItem: { display: 'flex', gap: 10, alignItems: 'flex-start' },
-  dot: { width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-500)', marginTop: 7, flexShrink: 0 },
-  form: { background: 'var(--surface-card-dark-raised)', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-xl)', padding: 36, display: 'flex', flexDirection: 'column', gap: 20, boxShadow: 'var(--shadow-card-dark)' },
-  row: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 },
-  success: { fontFamily: 'var(--font-body)', color: 'var(--accent-400)', fontSize: 15 },
+  section: { padding: 'var(--section-py-desktop) 24px', background: 'var(--lime)' },
+  inner: { maxWidth: 'var(--container-max)', margin: '0 auto', display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 64, alignItems: 'start' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 'var(--text-display-lg)', lineHeight: 'var(--lh-tight)', color: 'var(--night)', margin: '0 0 20px', letterSpacing: 'var(--tracking-tight)', textWrap: 'balance' },
+  p: { fontFamily: 'var(--font-body)', fontSize: 17, lineHeight: 1.65, color: 'var(--night)', margin: '0 0 32px' },
+  trust: { display: 'flex', flexDirection: 'column', gap: 12, fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: 15, color: 'var(--night)' },
+  trustItem: { display: 'flex', gap: 12, alignItems: 'center' },
+  dot: { width: 20, height: 20, borderRadius: '50%', background: 'var(--night)', display: 'grid', placeItems: 'center', flexShrink: 0 },
+  form: { background: 'var(--paper)', borderRadius: 'var(--radius-xl)', padding: 32, display: 'flex', flexDirection: 'column', gap: 18, boxShadow: '0 2px 4px rgba(42,43,34,.06), 0 30px 60px -28px rgba(42,43,34,.45)' },
+  row: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 },
+  success: { fontFamily: 'var(--font-body)', fontWeight: 500, color: 'var(--olive)', fontSize: 15, margin: 0, padding: '14px 16px', borderRadius: 'var(--radius-md)', background: 'var(--lime-soft)' },
 };
 const TRUST = ['Conversa inicial sem compromisso', 'Análise orientada ao negócio', 'Confidencialidade das informações', 'Retorno em prazo comercial claramente definido'];
 function Contact({ Input, Select, Textarea, Button }) {
@@ -19,7 +19,7 @@ function Contact({ Input, Select, Textarea, Button }) {
         <div>
           <h2 style={cStyles.h2}>Qual processo está limitando o crescimento da sua empresa?</h2>
           <p style={cStyles.p}>Conte brevemente o que sua empresa precisa melhorar. A MomboLabs analisará o cenário e identificará possíveis caminhos utilizando IA, automação, integração ou desenvolvimento personalizado.</p>
-          <div style={cStyles.trust}>{TRUST.map(t => <div key={t} style={cStyles.trustItem}><span style={cStyles.dot}></span>{t}</div>)}</div>
+          <div style={cStyles.trust}>{TRUST.map(t => <div key={t} style={cStyles.trustItem}><span style={cStyles.dot}><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4ED57" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>{t}</div>)}</div>
           <div style={{ marginTop: 28 }}><Button variant="ghost">Falar com a MomboLabs no WhatsApp</Button></div>
         </div>
         <form style={cStyles.form} onSubmit={e => { e.preventDefault(); setSent(true); }}>

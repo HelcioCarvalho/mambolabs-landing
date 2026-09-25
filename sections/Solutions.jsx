@@ -1,12 +1,12 @@
 const solStyles = {
-  section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
+  section: { padding: 'var(--section-py-desktop) 24px', background: 'var(--canvas)' },
   inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-display-lg)', color: 'var(--white-soft)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 640 },
-  grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1px', background: 'var(--border-dark)', border: '1px solid var(--border-dark)' },
-  cell: { background: 'var(--graphite-950)', padding: 32 },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 19, color: 'var(--white-soft)', margin: '16px 0 10px' },
-  desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--text-secondary-dark)', margin: '0 0 16px' },
-  benefit: { fontFamily: 'var(--font-body)', fontSize: 13.5, lineHeight: 1.5, color: 'var(--accent-400)', margin: 0, fontWeight: 500, fontStyle: 'italic' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 'var(--text-display-lg)', lineHeight: 'var(--lh-tight)', color: 'var(--ink)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 720, textWrap: 'balance' },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16 },
+  cell: { background: 'var(--paper)', border: '1px solid var(--hairline)', borderRadius: 'var(--radius-lg)', padding: 24, display: 'flex', flexDirection: 'column' },
+  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 17, lineHeight: 1.3, color: 'var(--ink)', margin: '20px 0 8px', letterSpacing: '-0.01em' },
+  desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--ink-2)', margin: '0 0 16px' },
+  benefit: { fontFamily: 'var(--font-body)', fontSize: 13.5, lineHeight: 1.5, color: 'var(--olive)', margin: 'auto 0 0', fontWeight: 500, paddingTop: 16, borderTop: '1px dashed var(--hairline-strong)' },
   tags: { display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 },
 };
 const SOLUTIONS = [
@@ -24,9 +24,9 @@ function Solutions({ Tag }) {
     <section id="solucoes" style={solStyles.section} data-screen-label="Soluções">
       <div style={solStyles.inner}>
         <h2 style={solStyles.h2}>Tecnologia aplicada aos desafios reais da sua empresa.</h2>
-        <div className="mb-grid-3" style={solStyles.grid}>
+        <div className="mb-grid-4" style={solStyles.grid}>
           {SOLUTIONS.map(([icon, t, d, tags, b]) => (
-            <div key={t} style={solStyles.cell}>
+            <div key={t} className="mb-lift mb-reveal" style={solStyles.cell}>
               <IconBadge name={icon} />
               <h3 style={solStyles.title}>{t}</h3>
               <p style={solStyles.desc}>{d}</p>

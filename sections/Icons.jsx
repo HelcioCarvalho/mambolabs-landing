@@ -12,7 +12,7 @@ const ICON_PATHS = {
   book: 'M5 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H5ZM19 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6Z',
   shieldCheck: 'M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6Zm-3 8 2 2 4-4',
 };
-function Icon({ name, size = 22, color = 'var(--accent-500)' }) {
+function Icon({ name, size = 22, color = 'var(--olive)' }) {
   const d = ICON_PATHS[name];
   if (!d) return null;
   return (
@@ -24,11 +24,11 @@ function Icon({ name, size = 22, color = 'var(--accent-500)' }) {
 function IconBadge({ name, size = 40 }) {
   const badge = {
     width: size, height: size, borderRadius: 'var(--radius-md)',
-    background: 'var(--surface-card-dark-raised)',
-    border: '1px solid var(--border-dark)',
+    background: 'var(--lime-soft)',
+    border: '1px solid rgba(90,106,24,.16)',
     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
   };
-  return <div style={badge}><Icon name={name} size={size * 0.5} color="var(--accent-400)" /></div>;
+  return <div style={badge}><Icon name={name} size={size * 0.5} color="var(--olive-deep)" /></div>;
 }
 
 /* Pulse — the recurring "chaos resolves into a steady beat" motif.
@@ -62,7 +62,7 @@ function pulsePoints(width, height, { chaosRatio = 0.46, tickEvery = 64, tickWid
 function pulsePath(width, height, opts) {
   return pulsePoints(width, height, opts).map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
 }
-function PulseLine({ width = 640, height = 80, id = 'pulse', from = 'var(--slate-500)', to = 'var(--accent-500)', strokeWidth = 2, opts, style }) {
+function PulseLine({ width = 640, height = 80, id = 'pulse', from = '#9AA0A8', to = '#5A6A18', strokeWidth = 2, opts, style }) {
   const d = pulsePath(width, height, opts);
   return (
     <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="auto" preserveAspectRatio="none" style={{ display: 'block', overflow: 'visible', ...style }}>

@@ -1,28 +1,51 @@
+/* MomboLabs — paleta "Unlock Potential" (tema claro, verde-limão). */
 :root{
---graphite-975:#0e0a07;--graphite-950:#15100c;--graphite-900:#1b140f;--graphite-800:#241c15;--graphite-700:#362a1f;--graphite-600:#4a3b2c;
---slate-500:#a89683;--slate-400:#b9a891;--slate-300:#cdbfab;--slate-200:#e2d8c9;
---white-soft:#f5efe2;--white:#ffffff;
---line-light:#e7ded0;
---accent-500:#c98a3f;--accent-600:#a8712f;--accent-400:#dba760;--accent-050:#f6ecd9;
---accent-alt-500:#4f9d8a;
---violet-500:#cf5a35;--violet-600:#b34a2a;--violet-400:#e0805e;
---success-500:#4f9d8a;--warning-500:#c98a3f;--danger-500:#cf5a35;
---surface-canvas-dark:var(--graphite-950);
---surface-canvas-light:var(--white-soft);
---surface-card-dark:rgba(245,239,226,0.03);
---surface-card-dark-raised:rgba(245,239,226,0.06);
---surface-card-light:var(--white);
---text-primary-dark:var(--white-soft);
---text-secondary-dark:var(--slate-300);
---text-tertiary-dark:var(--slate-500);
---text-primary-light:var(--graphite-950);
---text-secondary-light:var(--slate-500);
---border-dark:rgba(245,239,226,0.10);
---border-light:var(--line-light);
---accent-primary:var(--accent-500);
---accent-primary-hover:var(--accent-600);
---accent-primary-tint:var(--accent-050);
---focus-ring:var(--accent-400);
---gradient-brand:linear-gradient(135deg, var(--accent-400), var(--accent-500) 55%, var(--violet-500));
---surface-atmosphere-dark:radial-gradient(900px circle at 10% -10%, rgba(201,138,63,0.10), transparent 55%), radial-gradient(900px circle at 92% 20%, rgba(79,157,138,0.08), transparent 60%), var(--graphite-950);
+/* Paleta base */
+--lime:#D4ED57;          /* primary: ações, destaques */
+--lime-hover:#C6E03F;
+--lime-soft:#DCE8AD;     /* surface: faixas e cartões de apoio */
+--olive:#5A6A18;         /* accent: texto de destaque sobre fundo claro */
+--olive-deep:#465316;
+--canvas:#ECEEF0;        /* background */
+--paper:#FFFFFF;         /* secondary: cartões */
+--ink:#111827;           /* text-primary */
+--ink-2:#4B5563;         /* text-secondary */
+--ink-3:#5F6673;         /* metadados (≥4.5:1 sobre canvas) */
+--night:#2A2B22;         /* border / painéis escuros */
+--night-2:#1F2019;
+--on-night:#F4F6EC;
+--on-night-2:rgba(244,246,236,0.72);
+--on-night-3:rgba(244,246,236,0.52);
+--hairline:rgba(42,43,34,0.14);
+--hairline-strong:rgba(42,43,34,0.28);
+--hairline-night:rgba(244,246,236,0.12);
+
+/* Aliases legados — nomes antigos lidos pelo pacote de componentes (_ds_bundle.js).
+   "-dark" aqui significa "sobre o fundo da página", que agora é claro. */
+--graphite-975:var(--night-2);--graphite-950:var(--ink);--graphite-900:var(--night);--graphite-800:#EEF0E6;--graphite-700:#DADDD0;--graphite-600:#B9BDAE;
+--slate-500:#9AA0A8;--slate-400:#B4B9C0;--slate-300:#CDD1D6;--slate-200:#E2E5E8;
+--white-soft:var(--on-night);--white:#ffffff;
+--line-light:var(--hairline);
+--accent-500:var(--olive);--accent-600:var(--olive-deep);--accent-400:var(--olive);--accent-050:var(--lime-soft);
+--accent-alt-500:var(--olive);
+--violet-500:#B4442A;--violet-600:#98391F;--violet-400:#C9603F;
+--success-500:var(--olive);--warning-500:#A87A12;--danger-500:#B4442A;
+--surface-canvas-dark:var(--canvas);
+--surface-canvas-light:var(--canvas);
+--surface-card-dark:var(--paper);
+--surface-card-dark-raised:var(--paper);
+--surface-card-light:var(--paper);
+--text-primary-dark:var(--ink);
+--text-secondary-dark:var(--ink-2);
+--text-tertiary-dark:var(--ink-3);
+--text-primary-light:var(--ink);
+--text-secondary-light:var(--ink-2);
+--border-dark:var(--hairline);
+--border-light:var(--hairline);
+--accent-primary:var(--lime);
+--accent-primary-hover:var(--lime-hover);
+--accent-primary-tint:var(--lime-soft);
+--focus-ring:var(--olive);
+--gradient-brand:var(--lime);
+--surface-atmosphere-dark:var(--canvas);
 }

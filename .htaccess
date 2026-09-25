@@ -1,0 +1,14 @@
+# Garante que visitantes sempre recebam a versão atual das páginas e componentes.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|jsx|css|js)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(png|webp|jpg|jpeg|svg|woff2?)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# Anotações internas do projeto: não servir publicamente.
+<FilesMatch "^(DESIGN|PRODUCT)\.md$|^\.gitignore$">
+  Require all denied
+</FilesMatch>

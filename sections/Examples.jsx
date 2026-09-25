@@ -1,18 +1,18 @@
 const exStyles = {
-  section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
+  section: { padding: 'var(--section-py-desktop) 24px', background: 'var(--paper)' },
   inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-display-lg)', color: 'var(--text-primary-dark)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 640 },
-  visualGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 48 },
-  visual: { position: 'relative', minHeight: 320, overflow: 'hidden', border: '1px solid var(--border-dark)', borderRadius: 'var(--radius-lg)', background: 'var(--graphite-950)' },
-  image: { width: '100%', height: '100%', minHeight: 320, display: 'block', objectFit: 'cover' },
-  imageShade: { position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(21,16,12,.94) 0%, rgba(21,16,12,.08) 58%)' },
-  visualCopy: { position: 'absolute', left: 24, right: 24, bottom: 22 },
-  visualKicker: { display: 'block', fontFamily: 'var(--font-mono)', fontSize: 11.5, letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', color: 'var(--accent-400)', marginBottom: 7 },
-  visualTitle: { fontFamily: 'var(--font-display)', fontSize: 19, fontWeight: 600, color: 'var(--white-soft)', margin: 0 },
-  grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1px', background: 'var(--border-dark)', border: '1px solid var(--border-dark)' },
-  card: { background: 'var(--graphite-950)', padding: 28 },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 17, color: 'var(--text-primary-dark)', margin: '0 0 8px' },
-  desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--text-secondary-dark)', margin: 0 },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 'var(--text-display-lg)', lineHeight: 'var(--lh-tight)', color: 'var(--ink)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 720, textWrap: 'balance' },
+  visualGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 },
+  visual: { position: 'relative', minHeight: 340, overflow: 'hidden', borderRadius: 'var(--radius-xl)', background: 'var(--night)' },
+  image: { position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', objectFit: 'cover', filter: 'grayscale(1) contrast(1.15) brightness(0.9)', opacity: 0.55 },
+  imageShade: { position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(42,43,34,.96) 0%, rgba(42,43,34,.35) 55%, rgba(42,43,34,.1) 100%)' },
+  visualCopy: { position: 'absolute', left: 28, right: 28, bottom: 26 },
+  visualKicker: { display: 'inline-block', fontFamily: 'var(--font-mono)', fontWeight: 600, fontSize: 11.5, letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', color: 'var(--night)', background: 'var(--lime)', borderRadius: 'var(--radius-pill)', padding: '5px 11px', marginBottom: 14 },
+  visualTitle: { fontFamily: 'var(--font-display)', fontSize: 24, lineHeight: 1.2, fontWeight: 500, letterSpacing: '-0.02em', color: 'var(--on-night)', margin: 0, maxWidth: 420 },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 },
+  card: { background: 'var(--canvas)', border: '1px solid transparent', borderRadius: 'var(--radius-lg)', padding: 24, display: 'grid', gridTemplateColumns: '40px 1fr', gap: 16, alignItems: 'start' },
+  title: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 16, color: 'var(--ink)', margin: '0 0 6px', letterSpacing: '-0.01em' },
+  desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 },
 };
 const EXAMPLES = [
   ['bot', 'Assistente comercial inteligente', 'Um agente que consulta produtos, preços, clientes e histórico para ajudar a equipe comercial a responder com mais rapidez.'],
@@ -31,16 +31,16 @@ function Examples() {
       <div style={exStyles.inner}>
         <h2 style={exStyles.h2}>O que a MomboLabs pode construir para sua empresa?</h2>
         <div className="mb-visual-grid" style={exStyles.visualGrid}>
-          <div style={exStyles.visual}>
-            <img src="./images/mambolabs-integracoes.png" alt="Representação abstrata de sistemas empresariais conectados por uma camada central de automação" style={exStyles.image} />
+          <div className="mb-reveal" style={exStyles.visual}>
+            <img src="./images/mambolabs-integracoes.png" alt="Representação abstrata de sistemas empresariais conectados por uma camada central de automação" style={exStyles.image} loading="lazy" />
             <div style={exStyles.imageShade}></div>
             <div style={exStyles.visualCopy}>
               <span style={exStyles.visualKicker}>Integrações</span>
               <h3 style={exStyles.visualTitle}>Sistemas diferentes. Uma operação conectada.</h3>
             </div>
           </div>
-          <div style={exStyles.visual}>
-            <img src="./images/mambolabs-documentos.png" alt="Representação abstrata de documentos sendo transformados em dados organizados por inteligência artificial" style={exStyles.image} />
+          <div className="mb-reveal" style={exStyles.visual}>
+            <img src="./images/mambolabs-documentos.png" alt="Representação abstrata de documentos sendo transformados em dados organizados por inteligência artificial" style={exStyles.image} loading="lazy" />
             <div style={exStyles.imageShade}></div>
             <div style={exStyles.visualCopy}>
               <span style={exStyles.visualKicker}>Inteligência artificial</span>
@@ -50,7 +50,7 @@ function Examples() {
         </div>
         <div className="mb-grid-3" style={exStyles.grid}>
           {EXAMPLES.map(([icon, t, d]) => (
-            <div key={t} style={exStyles.card}><IconBadge name={icon} size={36} /><h3 style={{ ...exStyles.title, marginTop: 12 }}>{t}</h3><p style={exStyles.desc}>{d}</p></div>
+            <div key={t} className="mb-lift mb-reveal" style={exStyles.card}><IconBadge name={icon} size={40} /><div><h3 style={exStyles.title}>{t}</h3><p style={exStyles.desc}>{d}</p></div></div>
           ))}
         </div>
       </div>

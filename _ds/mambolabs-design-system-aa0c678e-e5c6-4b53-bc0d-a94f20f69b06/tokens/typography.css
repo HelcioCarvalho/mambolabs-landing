@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&family=Michroma&display=swap');
 :root{
---font-display:'Fraunces',ui-serif,Georgia,serif;
---font-body:'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
---font-mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
---text-display-xl:clamp(40px,6vw,74px);
---text-display-lg:clamp(32px,4.5vw,50px);
---text-display-md:clamp(26px,3.2vw,36px);
+--font-display:'Inter',ui-sans-serif,system-ui,sans-serif;
+--font-body:'Inter',ui-sans-serif,system-ui,sans-serif;
+--font-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',monospace;
+--font-accent:'Michroma','Inter',ui-sans-serif,sans-serif; /* só em chamadas curtas, números e rótulos */
+--text-display-xl:clamp(40px,6.2vw,76px);
+--text-display-lg:clamp(32px,4.6vw,56px);
+--text-display-md:clamp(26px,3.2vw,38px);
 --text-display-sm:22px;
 --text-body-lg:19px;
 --text-body-md:16px;
 --text-body-sm:14px;
---text-label:13px;
---lh-tight:1.06;/* @kind other */
---lh-snug:1.25;/* @kind other */
+--text-label:12px;
+--lh-tight:1.04;/* @kind other */
+--lh-snug:1.2;/* @kind other */
 --lh-normal:1.5;/* @kind other */
---lh-relaxed:1.65;/* @kind other */
---tracking-tight:-0.01em;
+--lh-relaxed:1.6;/* @kind other */
+--tracking-tight:-0.025em;
 --tracking-normal:0;
 --tracking-wide:0.08em;
 --weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;--weight-extrabold:800;
