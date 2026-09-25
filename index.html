@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ECEEF0">
+<meta name="theme-color" content="#FAF9F5">
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <script src="./support.js"></script>
@@ -14,15 +14,17 @@
   <meta name="description" content="MomboLabs cria agentes de IA, automações e integrações que conectam sistemas e eliminam tarefas manuais, tornando a operação da sua empresa mais inteligente." />
   <title>MomboLabs — Inteligência que transforma operações</title>
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mombolabs.com/" />
+  <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="MomboLabs — Inteligência que transforma operações" />
   <meta property="og:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
-  <meta property="og:image" content="./images/og-image.png" />
+  <meta property="og:image" content="https://mombolabs.com/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MomboLabs — Inteligência que transforma operações" />
   <meta name="twitter:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
-  <meta name="twitter:image" content="./images/og-image.png" />
+  <meta name="twitter:image" content="https://mombolabs.com/images/og-image.png" />
   <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/colors.css">
   <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/typography.css">
   <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/spacing.css">
@@ -32,25 +34,39 @@
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"MomboLabs","description":"Automação de processos, agentes de IA e integração de sistemas para empresas.","areaServed":"BR"}
   </script>
   <style>
-    html { scrollbar-color: #B9BDAE var(--canvas); }
-    body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
-    a { color: var(--olive); text-underline-offset: 3px; }
-    a:hover { color: var(--olive-deep); }
-    ::selection { background: var(--lime); color: var(--ink); }
+    html { scrollbar-color: #CFCBD6 var(--bg); }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
+    a { color: var(--accent-ink); text-underline-offset: 3px; }
+    a:hover { color: var(--accent-ink); }
+    ::selection { background: var(--accent); color: var(--text); }
     :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 4px; }
-    input::placeholder, textarea::placeholder { color: var(--ink-3); }
+    button, input, select, textarea { font-family: inherit; }
+    h1, h2, h3 { font-family: var(--font-display); }
+    input::placeholder, textarea::placeholder { color: var(--placeholder); opacity: 1; }
+    input, select, textarea { border-color: var(--border) !important; }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-line); outline: none; }
+
+    /* Botão com contorno (secundário) */
+    .mb-outline { border: 1.5px solid var(--text) !important; color: var(--text) !important; background: transparent !important; }
+    .mb-outline:hover { background: var(--text) !important; color: var(--bg) !important; }
+    /* Botão do WhatsApp */
+    .mb-wa { background: var(--whatsapp) !important; color: var(--accent-contrast) !important; border-color: transparent !important; }
+    .mb-wa:hover { filter: brightness(0.95); }
     button[style*="--accent-primary"]:hover, button[style*="var(--accent-primary)"]:hover { filter: brightness(0.96); }
 
     /* Marca-texto em limão para ênfases em títulos */
-    .mb-mark { background: linear-gradient(transparent 58%, var(--lime) 58%, var(--lime) 92%, transparent 92%); padding: 0 .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .mb-mark { background: linear-gradient(transparent 60%, rgba(255,122,26,.38) 60%, rgba(255,122,26,.38) 94%, transparent 94%); padding: 0 .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
     /* Acordeão do FAQ: ícone legível sobre fundo claro */
-    .mb-faq button > span { background: var(--lime) !important; color: var(--night) !important; border-color: transparent !important; font-weight: 600; }
-    .mb-faq button:hover > span { background: var(--lime-hover) !important; }
+    .mb-faq button { color: var(--text) !important; font-weight: 600 !important; font-size: var(--fs-18) !important; }
+    .mb-faq button > span { border: 1.5px solid var(--text) !important; color: var(--text) !important; font-weight: 600; }
+    .mb-faq button:hover > span, .mb-faq button[aria-expanded="true"] > span { background: var(--accent) !important; border-color: var(--accent) !important; color: var(--accent-contrast) !important; }
+    .mb-faq > div > div { border-bottom-color: var(--border) !important; }
+    .mb-faq p { color: var(--text-muted) !important; }
 
     /* Cartões: elevação no hover */
     .mb-lift { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-standard); }
-    .mb-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--hairline-strong) !important; }
+    .mb-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--border-strong) !important; }
 
     /* Entrada escalonada do hero */
     @keyframes mbRise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
@@ -70,8 +86,11 @@
       .mb-visual-grid { grid-template-columns: 1fr !important; }
       .mb-hide-sm { display: none !important; }
       header nav { display: none !important; }
+      header { padding: 12px 16px !important; }
+      header button { padding: 9px 14px !important; }
       .mb-stage-tags { display: none !important; }
       .mb-sticky { position: static !important; }
+      [data-screen-label] button { white-space: normal !important; text-align: left; }
       .mb-stage { padding: 56px 18px 20px !important; border-radius: var(--radius-lg) !important; }
     }
     @media (min-width: 861px) and (max-width: 1080px) {
@@ -80,7 +99,7 @@
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
   </style>
 </helmet>
-<div style="background: var(--canvas)">
+<div style="background: var(--bg); overflow-x: clip">
   <x-import component-from-global-scope="Icon" from="./sections/Icons.jsx" hint-size="0,0"></x-import>
   <x-import component-from-global-scope="Header" from="./sections/Header.jsx" dc-props="{{ dsProps }}" hint-size="100%,72px"></x-import>
   <x-import component-from-global-scope="Hero" from="./sections/Hero.jsx" dc-props="{{ dsProps }}" hint-size="100%,760px"></x-import>

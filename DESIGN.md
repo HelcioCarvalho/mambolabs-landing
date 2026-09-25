@@ -1,40 +1,53 @@
 # Design — MomboLabs
 
-Base: design system "Unlock Potential — Pro Plan" (Neuform), aplicado em 25/09/2026. Tokens em `_ds/mambolabs-design-system-…/tokens/`.
+Tema claro com laranja, definido pela auditoria visual de 25/09/2026 (substitui o tema verde-limão). Tokens em `_ds/mambolabs-design-system-…/tokens/`.
 
 ## Mundo
-Tema claro, técnico e limpo. Fundo cinza-claro com cartões brancos; o verde-limão é a energia da marca e aparece em ações, marca-texto e faixas. Três áreas escuras (`--night`) funcionam como palco para o limão: painel do pulso no hero, faixa de benefícios, plano em destaque, rodapé.
+Fundo creme claro, cartões brancos com borda fina, laranja só em CTA primário e destaques. Seções alternam `--bg` e `--surface` para separar os blocos. Áreas escuras (`--dark`) apenas no painel do hero, nas imagens de exemplo e no rodapé.
 
 ## Cores
 | Papel | Token | Valor |
 |---|---|---|
-| Fundo | `--canvas` | #ECEEF0 |
-| Cartão | `--paper` | #FFFFFF |
-| Ação / destaque | `--lime` | #D4ED57 |
-| Superfície de apoio | `--lime-soft` | #DCE8AD |
-| Texto de destaque sobre claro | `--olive` | #5A6A18 |
-| Texto | `--ink` / `--ink-2` / `--ink-3` | #111827 / #4B5563 / #5F6673 |
-| Painéis escuros | `--night` | #2A2B22 |
-| Linhas | `--hairline` | rgba(42,43,34,.14) |
+| Fundo | `--bg` | #FAF9F5 |
+| Seção alternada | `--surface` | #F4F2EE |
+| Cartão / campo | `--card` | #FFFFFF |
+| Texto | `--text` | #0D0912 |
+| Texto secundário | `--text-muted` | #5B5566 |
+| Borda | `--border` / `--border-strong` | #D9D6DE / #BDB8C6 |
+| Destaque / CTA | `--accent` | #FF7A1A |
+| Texto sobre laranja | `--accent-contrast` | #0D0912 |
+| Laranja como texto | `--accent-ink` | #B34A00 |
+| Chips / fundos suaves | `--accent-soft` / `--accent-line` | rgba(255,122,26,.08) / .25 |
+| Escuro | `--dark` | #0D0912 |
+| WhatsApp | `--whatsapp` | #25D366 (texto escuro) |
 
-Regras: limão nunca como cor de texto sobre fundo claro (use `--olive`); texto sobre limão é sempre `--night`/`--ink`. O laranja existe só dentro do logo.
-
-Os nomes antigos (`--graphite-*`, `--text-*-dark`, `--accent-*`) são aliases lidos pelo `_ds_bundle.js`; "-dark" significa "sobre o fundo da página". Não usar a variante `dark` do Button (texto e fundo resolvem para a mesma cor).
+Regras: #FF7A1A nunca como cor de texto sobre fundo claro (use `--accent-ink`), exceto o "Labs" do logotipo. Texto sobre laranja é sempre `--accent-contrast`. Os nomes antigos (`--graphite-*`, `--text-*-dark`, `--accent-500`…) são aliases lidos pelo `_ds_bundle.js`; não usar em código novo.
 
 ## Tipografia
-- Inter (500) para títulos: display grande, entrelinha 1.04, tracking negativo.
-- Inter para texto corrido.
-- Michroma (`--font-accent`) só em chamadas curtas, números de etapa e selos. Nunca em parágrafos.
-- JetBrains Mono (600, 12px, caixa alta) para rótulos e metadados.
-- Sem eyebrow/kicker acima de títulos.
+- Manrope 700 nos títulos (h1 72px, h2 52px, h3 16–22px).
+- Inter no texto e nos rótulos (rótulos: 12px, 600, caixa alta, tracking 0.08em).
+- Escala única: 12 / 14 / 16 / 18 / 22 / 32 / 52 / 72. Nenhum outro tamanho.
+- `button, input, select, textarea { font-family: inherit }` no CSS global.
 
-## Forma
-Raios: controle 8px, cartão 16px, painel 24px, pílula para botões, selos e chips. Seções com 88px verticais (64px no celular). Cartões com borda hairline; elevação no hover (`.mb-lift`).
+## Componentes
+- Botão primário: `Button variant="primary"` (laranja, texto escuro, pílula).
+- Botão secundário: `Button variant="ghost" className="mb-outline"` (contorno 1.5px `--text`).
+- WhatsApp: `className="mb-wa"` com `icon={<Icon name="whatsapp" … />}`.
+- Chips: fundo `--accent-soft`, borda `--accent-line`, texto `--accent-ink`.
+- Ícones: `IconBadge` (fundo `--accent-soft`, traço `--accent-ink`); caminhos em `sections/Icons.jsx`.
+- Não usar a variante `dark` do Button (fundo e texto resolvem para a mesma cor) nem o `Tag` do pacote.
+
+## Forma e ritmo
+Raios 8 / 16 / 24px e pílula. Seções com 96px verticais (64px no celular). Grades viram 1 coluna abaixo de 860px. Elevação no hover com `.mb-lift`.
 
 ## Assinaturas
-- `.mb-mark`: marca-texto em limão atrás de palavras-chave em títulos.
-- Pulso "caos → ritmo" (`PulseLine`/`pulsePath`): cinza no trecho caótico, limão (fundo escuro) ou oliva (fundo claro) no trecho estável.
-- Imagens ilustrativas em escala de cinza sobre painel `--night`, com selo limão.
+- `.mb-mark`: marca-texto laranja translúcido atrás de palavras-chave.
+- Pulso "caos → ritmo": trecho irregular em cinza, trecho estável em laranja.
+- Diagrama de sistemas desconectados (seção Problema).
 
 ## Movimento
-Entrada escalonada no hero (`.mb-rise-*`), traço do pulso desenhado, revelação ao rolar via `animation-timeline: view()` (aprimoramento progressivo), elevação de cartões. Tudo desligado com `prefers-reduced-motion`.
+Entrada escalonada no hero, traço do pulso desenhado, revelação ao rolar (`animation-timeline: view()`, aprimoramento progressivo), elevação de cartões. Tudo desligado com `prefers-reduced-motion`.
+
+## Pendências de conteúdo
+- "Mais escolhido" no plano do meio foi pedido pela auditoria; confirmar com dados reais.
+- Cards de cenário típico mostram o indicador acompanhado sem valores; preencher com números reais quando houver casos.

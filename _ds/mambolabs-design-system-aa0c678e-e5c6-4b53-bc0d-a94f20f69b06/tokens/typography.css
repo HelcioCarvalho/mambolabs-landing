@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Manrope:wght@500;600;700;800&display=swap');
 :root{
---font-display:'Inter',ui-sans-serif,system-ui,sans-serif;
+--font-display:'Manrope','Inter',ui-sans-serif,system-ui,sans-serif;
 --font-body:'Inter',ui-sans-serif,system-ui,sans-serif;
---font-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',monospace;
---font-accent:'Michroma','Inter',ui-sans-serif,sans-serif; /* só em chamadas curtas, números e rótulos */
---text-display-xl:clamp(40px,6.2vw,76px);
---text-display-lg:clamp(32px,4.6vw,56px);
---text-display-md:clamp(26px,3.2vw,38px);
---text-display-sm:22px;
---text-body-lg:19px;
---text-body-md:16px;
---text-body-sm:14px;
---text-label:12px;
---lh-tight:1.04;/* @kind other */
---lh-snug:1.2;/* @kind other */
+--font-mono:'Inter',ui-sans-serif,system-ui,sans-serif; /* rótulos: Inter em caixa alta */
+--font-accent:var(--font-display);
+/* Escala única: 12 / 14 / 16 / 18 / 22 / 32 / 52 / 72 */
+--fs-12:12px;--fs-14:14px;--fs-16:16px;--fs-18:18px;--fs-22:22px;--fs-32:32px;--fs-52:52px;--fs-72:72px;
+--text-display-xl:clamp(40px,6vw,72px);
+--text-display-lg:clamp(32px,4.2vw,52px);
+--text-display-md:var(--fs-32);
+--text-display-sm:var(--fs-22);
+--text-body-lg:var(--fs-18);
+--text-body-md:var(--fs-16);
+--text-body-sm:var(--fs-14);
+--text-label:var(--fs-12);
+--lh-tight:1.06;/* @kind other */
+--lh-snug:1.25;/* @kind other */
 --lh-normal:1.5;/* @kind other */
 --lh-relaxed:1.6;/* @kind other */
---tracking-tight:-0.025em;
+--tracking-tight:-0.03em;
 --tracking-normal:0;
 --tracking-wide:0.08em;
 --weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;--weight-extrabold:800;

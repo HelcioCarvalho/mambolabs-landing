@@ -1,51 +1,42 @@
-/* MomboLabs — paleta "Unlock Potential" (tema claro, verde-limão). */
+/* MomboLabs — tema claro com laranja (auditoria de 25/09/2026). */
 :root{
-/* Paleta base */
---lime:#D4ED57;          /* primary: ações, destaques */
---lime-hover:#C6E03F;
---lime-soft:#DCE8AD;     /* surface: faixas e cartões de apoio */
---olive:#5A6A18;         /* accent: texto de destaque sobre fundo claro */
---olive-deep:#465316;
---canvas:#ECEEF0;        /* background */
---paper:#FFFFFF;         /* secondary: cartões */
---ink:#111827;           /* text-primary */
---ink-2:#4B5563;         /* text-secondary */
---ink-3:#5F6673;         /* metadados (≥4.5:1 sobre canvas) */
---night:#2A2B22;         /* border / painéis escuros */
---night-2:#1F2019;
---on-night:#F4F6EC;
---on-night-2:rgba(244,246,236,0.72);
---on-night-3:rgba(244,246,236,0.52);
---hairline:rgba(42,43,34,0.14);
---hairline-strong:rgba(42,43,34,0.28);
---hairline-night:rgba(244,246,236,0.12);
+/* Tokens principais */
+--bg:#FAF9F5;            /* fundo da página */
+--surface:#F4F2EE;       /* seções alternadas */
+--card:#FFFFFF;          /* cartões e campos */
+--text:#0D0912;
+--text-muted:#5B5566;    /* 7.0:1 sobre --bg */
+--border:#D9D6DE;
+--border-strong:#BDB8C6;
+--accent:#FF7A1A;        /* CTA primário e destaques */
+--accent-hover:#F06A08;
+--accent-contrast:#0D0912; /* texto sobre --accent (7.6:1) */
+--accent-ink:#B34A00;    /* laranja como texto sobre fundo claro (5.2:1) */
+--accent-soft:rgba(255,122,26,.08);
+--accent-line:rgba(255,122,26,.25);
+--dark:#0D0912;          /* rodapé e painéis escuros */
+--on-dark:#F6F7F9;
+--on-dark-2:rgba(246,247,249,.74);
+--on-dark-3:rgba(246,247,249,.56);
+--border-on-dark:rgba(246,247,249,.14);
+--placeholder:#8A8594;
+--whatsapp:#25D366;
 
-/* Aliases legados — nomes antigos lidos pelo pacote de componentes (_ds_bundle.js).
-   "-dark" aqui significa "sobre o fundo da página", que agora é claro. */
---graphite-975:var(--night-2);--graphite-950:var(--ink);--graphite-900:var(--night);--graphite-800:#EEF0E6;--graphite-700:#DADDD0;--graphite-600:#B9BDAE;
---slate-500:#9AA0A8;--slate-400:#B4B9C0;--slate-300:#CDD1D6;--slate-200:#E2E5E8;
---white-soft:var(--on-night);--white:#ffffff;
---line-light:var(--hairline);
---accent-500:var(--olive);--accent-600:var(--olive-deep);--accent-400:var(--olive);--accent-050:var(--lime-soft);
---accent-alt-500:var(--olive);
---violet-500:#B4442A;--violet-600:#98391F;--violet-400:#C9603F;
---success-500:var(--olive);--warning-500:#A87A12;--danger-500:#B4442A;
---surface-canvas-dark:var(--canvas);
---surface-canvas-light:var(--canvas);
---surface-card-dark:var(--paper);
---surface-card-dark-raised:var(--paper);
---surface-card-light:var(--paper);
---text-primary-dark:var(--ink);
---text-secondary-dark:var(--ink-2);
---text-tertiary-dark:var(--ink-3);
---text-primary-light:var(--ink);
---text-secondary-light:var(--ink-2);
---border-dark:var(--hairline);
---border-light:var(--hairline);
---accent-primary:var(--lime);
---accent-primary-hover:var(--lime-hover);
---accent-primary-tint:var(--lime-soft);
---focus-ring:var(--olive);
---gradient-brand:var(--lime);
---surface-atmosphere-dark:var(--canvas);
+/* Aliases legados lidos pelo pacote de componentes (_ds_bundle.js). */
+--graphite-975:var(--dark);--graphite-950:var(--accent-contrast);--graphite-900:var(--dark);--graphite-800:var(--accent-soft);--graphite-700:var(--border);--graphite-600:var(--border-strong);
+--slate-500:#9A95A3;--slate-400:#B4AFBC;--slate-300:#CFCBD6;--slate-200:#E6E3EA;
+--white-soft:var(--on-dark);--white:#ffffff;
+--line-light:var(--border);
+--accent-500:var(--accent-ink);--accent-600:var(--accent-ink);--accent-400:var(--accent-ink);--accent-050:var(--accent-soft);
+--accent-alt-500:var(--accent-ink);
+--success-500:#1F8A5B;--warning-500:#B34A00;--danger-500:#C0362C;
+--surface-canvas-dark:var(--bg);--surface-canvas-light:var(--bg);
+--surface-card-dark:var(--card);--surface-card-dark-raised:var(--card);--surface-card-light:var(--card);
+--text-primary-dark:var(--text);--text-secondary-dark:var(--text-muted);--text-tertiary-dark:var(--text-muted);
+--text-primary-light:var(--text);--text-secondary-light:var(--text-muted);
+--border-dark:var(--border);--border-light:var(--border);
+--accent-primary:var(--accent);--accent-primary-hover:var(--accent-hover);--accent-primary-tint:var(--accent-soft);
+--focus-ring:var(--accent);
+--gradient-brand:var(--accent);
+--surface-atmosphere-dark:var(--bg);
 }

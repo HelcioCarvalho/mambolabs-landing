@@ -1,12 +1,12 @@
 const diffStyles = {
-  section: { padding: 'var(--section-py-desktop) 24px', background: 'var(--paper)' },
+  section: { padding: 'var(--section-py-desktop) 24px', background: 'var(--surface)' },
   inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 'var(--text-display-lg)', lineHeight: 'var(--lh-tight)', color: 'var(--ink)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 720, textWrap: 'balance' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-display-lg)', lineHeight: 'var(--lh-tight)', color: 'var(--text)', margin: '0 0 48px', letterSpacing: 'var(--tracking-tight)', maxWidth: 720, textWrap: 'balance' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', columnGap: 40, rowGap: 0 },
-  cell: { padding: '28px 0', borderTop: '1px solid var(--hairline)' },
-  title: { display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 18, color: 'var(--ink)', margin: '0 0 10px', letterSpacing: '-0.01em' },
-  mark: { width: 10, height: 10, borderRadius: 3, background: 'var(--lime)', boxShadow: 'inset 0 0 0 1px rgba(42,43,34,.18)', flexShrink: 0 },
-  desc: { fontFamily: 'var(--font-body)', fontSize: 15, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 },
+  cell: { padding: '28px 0', borderTop: '1px solid var(--border)' },
+  title: { display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 18, color: 'var(--text)', margin: '0 0 10px', letterSpacing: '-0.01em' },
+  mark: { width: 10, height: 10, borderRadius: 3, background: 'var(--accent)', boxShadow: 'inset 0 0 0 1px rgba(13,9,18,.18)', flexShrink: 0 },
+  desc: { fontFamily: 'var(--font-body)', fontSize: 16, lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 },
 };
 const DIFFS = [
   ['Soluções sob medida', 'A tecnologia é adaptada aos processos e objetivos da empresa, e não o contrário.'],
