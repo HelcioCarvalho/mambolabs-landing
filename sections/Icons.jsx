@@ -1,5 +1,5 @@
 // Troque pelo número real (somente dígitos, com DDI + DDD). Ex.: '5511999999999'
-const WHATSAPP_NUMBER = '5500000000000';
+const WHATSAPP_NUMBER = '5516992061401';
 const WHATSAPP_MESSAGE = 'Olá, Mombo Labs! Tenho um processo que quero automatizar.';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
