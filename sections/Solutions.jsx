@@ -1,37 +1,31 @@
-const solStyles = {
-  section: { padding: '128px 24px', background: 'var(--surface-atmosphere-dark)' },
-  inner: { maxWidth: 'var(--container-max)', margin: '0 auto' },
-  h2: { fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'var(--text-display-lg)', color: 'var(--white-soft)', margin: '0 0 48px', letterSpacing: '-0.02em', maxWidth: 640 },
-  grid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 },
-  title: { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 19, color: 'var(--white-soft)', margin: '14px 0 10px' },
-  desc: { fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--text-secondary-dark)', margin: '0 0 14px' },
-  benefit: { fontFamily: 'var(--font-body)', fontSize: 13.5, lineHeight: 1.5, color: 'var(--accent-400)', margin: 0, fontWeight: 600 },
-  tags: { display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 14 },
-};
 const SOLUTIONS = [
-  ['bot', 'Agentes de Inteligência Artificial', 'Criamos agentes capazes de consultar informações, interpretar documentos, responder perguntas e interagir com os sistemas da empresa.', ['Atendimento', 'Documentos', 'Relatórios'], 'Transforme conhecimento e dados da empresa em ações rápidas e acessíveis.'],
-  ['workflow', 'Automação de processos', 'Automatizamos tarefas repetitivas e fluxos que hoje dependem de atividades manuais.', ['Cadastros', 'Notificações', 'Aprovações'], 'Reduza retrabalho, erros operacionais e tempo gasto em atividades administrativas.'],
-  ['plug', 'Integração de sistemas', 'Conectamos sistemas que precisam trocar informações de maneira automática e segura.', ['ERP', 'CRM', 'APIs'], 'Faça os dados circularem entre os sistemas sem depender de lançamentos manuais.'],
-  ['database', 'IA conectada aos dados da empresa', 'Criamos soluções de IA capazes de utilizar documentos, manuais e bancos de dados como fonte de conhecimento.', ['Contratos', 'Catálogos', 'Históricos'], 'Permita que equipes e clientes encontrem respostas com rapidez, contexto e segurança.'],
-  ['window', 'Sistemas e aplicações personalizadas', 'Desenvolvemos aplicações web, portais, painéis e ferramentas específicas para a operação do cliente.', ['Portais', 'Dashboards', 'MVPs'], 'Quando uma ferramenta pronta não resolve, construímos a solução adequada ao processo.'],
-  ['chat', 'Automação de atendimento', 'Estruturamos atendimentos inteligentes conectados aos dados e processos da empresa.', ['WhatsApp', 'Sites', 'Agendamentos'], 'Atenda mais rápido sem perder contexto e sem sobrecarregar sua equipe.'],
-  ['chart', 'Dados, dashboards e inteligência operacional', 'Organizamos dados de diferentes fontes em indicadores úteis para a tomada de decisão.', ['Relatórios', 'Alertas', 'Metas'], 'Tome decisões com informações atualizadas e acessíveis.'],
-  ['compass', 'Consultoria e diagnóstico de IA', 'Ajudamos empresas que desejam aplicar inteligência artificial, mas ainda não possuem uma estratégia definida.', ['Roadmap', 'Priorização', 'Riscos'], 'Comece pela oportunidade certa, em vez de investir em tecnologia sem direção.'],
+  { name: 'AI Automation', icon: 'workflow', cls: 'sol--feature', text: 'Automatizamos processos que hoje dependem de tarefas manuais, conferências, cópias de informações, documentos, planilhas, mensagens e acompanhamento humano.', chips: ['Tarefas manuais', 'Conferências', 'Documentos', 'Planilhas', 'Mensagens'] },
+  { name: 'AI Agents', icon: 'bot', cls: 'sol--narrow sol--dark', text: 'Criamos agentes de inteligência artificial conectados aos dados e ferramentas da empresa. Agentes que podem pesquisar, analisar, executar tarefas e interagir com sistemas reais.' },
+  { name: 'AI Integrations', icon: 'plug', cls: '', text: 'Conectamos ferramentas que antes funcionavam separadamente, funcionando em um único fluxo.', chips: ['WhatsApp', 'Google Drive', 'ClickUp', 'Sistemas internos', 'APIs', 'Bancos de dados', 'Modelos de IA'] },
+  { name: 'Custom AI Solutions', icon: 'layers', cls: '', text: 'Quando uma ferramenta pronta não resolve o problema, construímos uma solução específica: painéis, sistemas internos, workflows, interfaces, agentes e automações desenvolvidas para aquela operação.' },
 ];
-function Solutions({ Card, Tag }) {
+function Solutions() {
   return (
-    <section id="solucoes" style={solStyles.section} data-screen-label="Soluções">
-      <div style={solStyles.inner}>
-        <h2 style={solStyles.h2}>Tecnologia aplicada aos desafios reais da sua empresa.</h2>
-        <div style={solStyles.grid}>
-          {SOLUTIONS.map(([icon, t, d, tags, b]) => (
-            <Card key={t} hover>
-              <IconBadge name={icon} />
-              <h3 style={solStyles.title}>{t}</h3>
-              <p style={solStyles.desc}>{d}</p>
-              <div style={solStyles.tags}>{tags.map(tg => <Tag key={tg}>{tg}</Tag>)}</div>
-              <p style={solStyles.benefit}>{b}</p>
-            </Card>
+    <section id="entregas" className="section" data-screen-label="O que entregamos">
+      <div className="container">
+        <div className="head">
+          <div className="head__text">
+            <span className="label reveal">Serviços</span>
+            <h2 className="h2 reveal" style={{ '--i': 1 }}>O que entregamos</h2>
+          </div>
+          <p className="body head__aside reveal" style={{ '--i': 2 }}>Quatro frentes que se combinam em uma única entrega, desenhada para a sua operação.</p>
+        </div>
+        <div className="solutions">
+          {SOLUTIONS.map((s, i) => (
+            <article key={s.name} className={`sol ${s.cls} reveal`} style={{ '--i': i }}>
+              <div className="sol__top">
+                <span className="sol__icon"><Icon name={s.icon} size={22} color="var(--text)" /></span>
+                <span className="sol__num">0{i + 1}</span>
+              </div>
+              <h3 className="sol__name">{s.name}</h3>
+              <p className="body">{s.text}</p>
+              {s.chips && <div className="sol__chips">{s.chips.map((c) => <span key={c} className="chip">{c}</span>)}</div>}
+            </article>
           ))}
         </div>
       </div>

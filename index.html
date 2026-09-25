@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,65 +8,61 @@
 <body>
 <x-dc>
 <helmet>
-  <meta name="description" content="MamboLabs cria agentes de IA, automações e integrações que conectam sistemas e eliminam tarefas manuais, tornando a operação da sua empresa mais inteligente." />
-  <title>MamboLabs — Inteligência que transforma operações</title>
+  <meta name="description" content="Mombo Labs entrega soluções de IA e automação funcionando: automação de processos, agentes de IA, integrações e sistemas personalizados para empresas." />
+  <title>Mombo Labs — Soluções de IA e automação entregues para o seu negócio</title>
+  <meta name="theme-color" content="#D4ED57" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="MamboLabs — Inteligência que transforma operações" />
-  <meta property="og:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
+  <meta property="og:title" content="Mombo Labs — Soluções de IA e automação entregues para o seu negócio" />
+  <meta property="og:description" content="Entendemos o processo, construímos a solução, integramos as tecnologias necessárias e entregamos funcionando." />
   <meta property="og:image" content="./images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MamboLabs — Inteligência que transforma operações" />
-  <meta name="twitter:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
+  <meta name="twitter:title" content="Mombo Labs — Soluções de IA e automação entregues para o seu negócio" />
+  <meta name="twitter:description" content="Entendemos o processo, construímos a solução, integramos as tecnologias necessárias e entregamos funcionando." />
   <meta name="twitter:image" content="./images/og-image.png" />
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/styles.css">
-  <script src="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/_ds_bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Michroma&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/site.css" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"MamboLabs","description":"Automação de processos, agentes de IA e integração de sistemas para empresas.","areaServed":"BR"}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Mombo Labs","description":"Soluções de IA e automação entregues para empresas: automação de processos, agentes de IA, integrações e sistemas personalizados.","areaServed":"BR"}
   </script>
-  <style>
-    a { color: var(--accent-400); }
-    a:hover { color: var(--accent-500); }
-    @media (prefers-reduced-motion: reduce) { *{ animation: none !important; transition: none !important; } }
-  </style>
+  <script>
+  (function () {
+    if (!('IntersectionObserver' in window) || !('MutationObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.setAttribute('data-in', ''); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    var seen = new WeakSet();
+    function scan() {
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        if (!seen.has(el)) { seen.add(el); io.observe(el); }
+      });
+    }
+    new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
+    scan();
+  })();
+  </script>
 </helmet>
-<div style="background: var(--graphite-950)">
-  <x-import component-from-global-scope="Icon" from="./sections/Icons.jsx" hint-size="0,0"></x-import>
-  <x-import component-from-global-scope="Header" from="./sections/Header.jsx" dc-props="{{ dsProps }}" hint-size="100%,72px"></x-import>
-  <x-import component-from-global-scope="Hero" from="./sections/Hero.jsx" dc-props="{{ dsProps }}" hint-size="100%,760px"></x-import>
-  <x-import component-from-global-scope="Problem" from="./sections/Problem.jsx" dc-props="{{ dsProps }}" hint-size="100%,760px"></x-import>
-  <x-import component-from-global-scope="ValueProp" from="./sections/ValueProp.jsx" hint-size="100%,480px"></x-import>
-  <x-import component-from-global-scope="Solutions" from="./sections/Solutions.jsx" dc-props="{{ dsProps }}" hint-size="100%,900px"></x-import>
-  <x-import component-from-global-scope="Examples" from="./sections/Examples.jsx" hint-size="100%,700px"></x-import>
-  <x-import component-from-global-scope="Benefits" from="./sections/Benefits.jsx" hint-size="100%,420px"></x-import>
-  <x-import component-from-global-scope="Journey" from="./sections/Journey.jsx" hint-size="100%,480px"></x-import>
-  <x-import component-from-global-scope="Differentiators" from="./sections/Differentiators.jsx" hint-size="100%,560px"></x-import>
-  <x-import component-from-global-scope="Pricing" from="./sections/Pricing.jsx" dc-props="{{ dsProps }}" hint-size="100%,600px"></x-import>
-  <x-import component-from-global-scope="Proof" from="./sections/ProofAbout.jsx" hint-size="100%,320px"></x-import>
-  <x-import component-from-global-scope="About" from="./sections/ProofAbout.jsx" hint-size="100%,400px"></x-import>
-  <x-import component-from-global-scope="Faq" from="./sections/Faq.jsx" dc-props="{{ dsProps }}" hint-size="100%,700px"></x-import>
-  <x-import component-from-global-scope="Contact" from="./sections/Contact.jsx" dc-props="{{ dsProps }}" hint-size="100%,600px"></x-import>
-  <x-import component-from-global-scope="Footer" from="./sections/Footer.jsx" hint-size="100%,320px"></x-import>
+<div class="page">
+  <x-import component-from-global-scope="Header" from="./sections/Icons.jsx ./sections/Header.jsx" hint-size="100%,72px"></x-import>
+  <main>
+    <x-import component-from-global-scope="Hero" from="./sections/Icons.jsx ./sections/Hero.jsx" hint-size="100%,760px"></x-import>
+    <x-import component-from-global-scope="Service" from="./sections/Icons.jsx ./sections/Service.jsx" hint-size="100%,560px"></x-import>
+    <x-import component-from-global-scope="Solutions" from="./sections/Icons.jsx ./sections/Solutions.jsx" hint-size="100%,900px"></x-import>
+    <x-import component-from-global-scope="Journey" from="./sections/Icons.jsx ./sections/Journey.jsx" hint-size="100%,480px"></x-import>
+    <x-import component-from-global-scope="Manifesto" from="./sections/Icons.jsx ./sections/Manifesto.jsx" hint-size="100%,520px"></x-import>
+    <x-import component-from-global-scope="Examples" from="./sections/Icons.jsx ./sections/Examples.jsx" hint-size="100%,720px"></x-import>
+    <x-import component-from-global-scope="FinalCta" from="./sections/Icons.jsx ./sections/FinalCta.jsx" hint-size="100%,560px"></x-import>
+  </main>
+  <x-import component-from-global-scope="Footer" from="./sections/Icons.jsx ./sections/Footer.jsx" hint-size="100%,280px"></x-import>
 </div>
-
 </x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    const ds = (typeof window !== 'undefined' && window.MamboLabsDesignSystem_aa0c67) || {};
-    return {
-      dsProps: {
-        Button: ds.Button, Input: ds.Input, Select: ds.Select, Textarea: ds.Textarea,
-        Accordion: ds.Accordion, Card: ds.Card, Badge: ds.Badge, Tag: ds.Tag
-      }
-    };
-  }
-}
-
-</script>
 </body>
 </html>
