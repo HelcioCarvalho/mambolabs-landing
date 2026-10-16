@@ -28,7 +28,7 @@ function Footer() {
           <div>
             <div style={fStyles.colTitle}>Contato</div>
             <a href="mailto:contato@mombolabs.com" className="mb-flink" style={fStyles.link}>contato@mombolabs.com</a>
-            <a href="#contato" className="mb-flink" style={fStyles.link}>WhatsApp</a>
+            <a href="https://wa.me/5516992061401" target="_blank" rel="noopener" className="mb-flink" style={fStyles.link}>WhatsApp (16) 99206-1401</a>
           </div>
           <div>
             <div style={fStyles.colTitle}>Legal</div>

@@ -3,135 +3,674 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#FAF9F5">
+<title>MomboLabs — Menos tarefas manuais. Mais espaço para crescer.</title>
+<meta name="description" content="A MomboLabs conecta IA, processos e ferramentas para simplificar a operação da sua empresa: reuniões que viram tarefas, informação fácil de encontrar e processos conectados.">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-<script src="./support.js"></script>
+<link rel="canonical" href="https://mombolabs.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mombolabs.com/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="MomboLabs — Menos tarefas manuais. Mais espaço para crescer.">
+<meta property="og:description" content="Conectamos IA, processos e ferramentas para simplificar a operação da sua empresa.">
+<meta property="og:image" content="https://mombolabs.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MomboLabs — Menos tarefas manuais. Mais espaço para crescer.">
+<meta name="twitter:description" content="Conectamos IA, processos e ferramentas para simplificar a operação da sua empresa.">
+<meta name="twitter:image" content="https://mombolabs.com/images/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"MomboLabs","url":"https://mombolabs.com/","email":"contato@mombolabs.com","telephone":"+55 16 99206-1401","description":"IA, automação e integração de processos para empresas.","areaServed":"BR"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F6F6F5;
+    --text: #171717;
+    --muted: #686868;
+    --accent: #FF7426;
+    --accent-ink: #C2410C;
+    --accent-soft: #FFF1E8;
+    --border: #E8E8E8;
+    --font-display: "Outfit", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --container: 1200px;
+    --gutter: 24px;
+    --section-y: clamp(56px, 8vw, 120px);
+    --radius-card: 22px;
+    --radius-ui: 14px;
+    --shadow-ui: 0 1px 2px rgba(23,23,23,.04), 0 12px 32px -12px rgba(23,23,23,.12);
+    --shadow-float: 0 2px 6px rgba(23,23,23,.05), 0 24px 48px -18px rgba(23,23,23,.18);
+    --ease: cubic-bezier(.2,.7,.2,1);
+    --dur: 200ms;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  img, svg { display: block; }
+  a { color: inherit; }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; margin: 0; color: var(--text); text-wrap: balance; }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  :focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: var(--accent-soft); color: var(--text); }
+
+  .container { width: 100%; max-width: calc(var(--container) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+  .section { padding-block: var(--section-y); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--accent-ink); }
+  .eyebrow svg { color: var(--accent); }
+  .h2 { font-size: clamp(30px, 1rem + 2.6vw, 48px); line-height: 1.1; }
+  .lead { color: var(--muted); font-size: clamp(16px, .9rem + .3vw, 18px); line-height: 1.6; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto clamp(40px, 5vw, 64px); }
+  .section-head .h2 { margin: 12px 0 16px; }
+  .ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+  /* Botões */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: var(--radius-ui); font: 500 15px/1 var(--font-body); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+  .btn .ico { width: 16px; height: 16px; }
+  .btn-dark { background: var(--text); color: #fff; box-shadow: 0 8px 20px -10px rgba(23,23,23,.6); }
+  .btn-dark:hover { background: #000; transform: translateY(-1px); }
+  .btn-light { background: #fff; color: var(--text); border-color: var(--border); }
+  .btn-light:hover { border-color: #CFCFCF; background: #FCFCFB; transform: translateY(-1px); }
+  .btn-sm { min-height: 44px; padding: 0 16px; font-size: 14px; border-radius: 12px; }
+
+  /* Reflexos de luz */
+  .glow { position: absolute; pointer-events: none; z-index: 0; filter: blur(20px); }
+  .glow-l { top: -260px; left: -260px; width: 760px; height: 640px; background: radial-gradient(closest-side, rgba(255,116,38,.42), rgba(255,170,120,.26) 45%, rgba(255,226,150,.14) 70%, transparent); }
+  .glow-r { top: -300px; right: -280px; width: 820px; height: 680px; background: radial-gradient(closest-side, rgba(255,150,80,.36), rgba(255,205,160,.24) 45%, rgba(255,236,170,.14) 70%, transparent); }
+
+  /* Cabeçalho */
+  .header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.82); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid transparent; transition: border-color var(--dur) var(--ease); }
+  .header.is-scrolled { border-bottom-color: var(--border); }
+  .header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; height: 76px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; justify-self: start; }
+  .brand img { height: 30px; width: auto; }
+  .brand span { font: 600 20px/1 var(--font-display); letter-spacing: -0.02em; }
+  .brand b { font-weight: 600; color: var(--accent); }
+  .nav { display: flex; gap: 4px; }
+  .nav a { font-size: 14px; color: var(--muted); text-decoration: none; padding: 10px 14px; border-radius: 10px; transition: color var(--dur) var(--ease), background var(--dur) var(--ease); }
+  .nav a:hover { color: var(--text); background: var(--surface); }
+  .header .btn { justify-self: end; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: clamp(40px, 6vw, 88px) 0 clamp(56px, 7vw, 104px); margin-top: -76px; padding-top: calc(76px + clamp(40px, 6vw, 88px)); }
+  .hero .container { position: static; }
+  .hero-copy { position: relative; z-index: 2; }
+  .hero-copy { max-width: 760px; margin: 0 auto; text-align: center; }
+  .pill { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.75); border: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+  .pill i { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+  .pill .tag { color: var(--accent-ink); font-weight: 500; }
+  .hero h1 { font-size: clamp(38px, 1.2rem + 4.6vw, 70px); line-height: 1.08; letter-spacing: -0.035em; margin: 24px 0 22px; }
+  .hero h1 span { display: block; }
+  .hero .lead { max-width: 520px; margin: 0 auto 36px; }
+  .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  .float { position: absolute; z-index: 1; width: 236px; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 16px; box-shadow: var(--shadow-float); font-size: 12px; }
+  .float-l { left: max(24px, calc(50% - 690px)); top: 210px; transform: perspective(900px) rotateY(10deg) rotate(-5deg); }
+  .float-r { right: max(24px, calc(50% - 690px)); top: 170px; transform: perspective(900px) rotateY(-10deg) rotate(4deg); }
+  .float-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .badge-ico { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: var(--accent); color: #fff; }
+  .badge-ico .ico { width: 16px; height: 16px; }
+  .float strong { display: block; font: 500 13px/1.3 var(--font-body); }
+  .float small { color: var(--muted); font-size: 11px; }
+  .checks li { display: flex; align-items: center; gap: 8px; padding: 6px 0; color: #3B3B3B; }
+  .cb { width: 15px; height: 15px; border-radius: 4px; border: 1.5px solid #CFCFCF; flex-shrink: 0; display: grid; place-items: center; }
+  .cb.on { background: var(--accent); border-color: var(--accent); }
+  .cb.on::after { content: ""; width: 7px; height: 4px; border-left: 1.6px solid #fff; border-bottom: 1.6px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+  .float-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+  .avatars { display: flex; }
+  .avatars span { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #fff; margin-left: -6px; display: grid; place-items: center; font-size: 9px; font-weight: 500; color: #3B3B3B; background: #ECEAE6; }
+  .avatars span:first-child { margin-left: 0; }
+  .avatars span:nth-child(2) { background: #FBE3D3; }
+  .avatars span:nth-child(3) { background: #E4E6EA; }
+  .mic { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: var(--accent-soft); }
+  .mic .ico { width: 16px; height: 16px; }
+  .flow-list li { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; border: 1px solid var(--border); margin-top: 6px; color: #3B3B3B; }
+  .mini-ico { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: var(--surface); color: var(--text); flex-shrink: 0; }
+  .mini-ico .ico { width: 14px; height: 14px; }
+  .mini-ico.ok { background: var(--accent-soft); color: var(--accent-ink); }
+
+  /* Integrações */
+  .integrations { padding-bottom: var(--section-y); }
+  .int-band { background: var(--surface); border-radius: 26px; padding: clamp(24px, 3vw, 36px); display: grid; grid-template-columns: 1fr auto; gap: 20px 32px; align-items: center; }
+  .int-band h2 { font-size: clamp(20px, 1rem + .6vw, 24px); font-weight: 500; letter-spacing: -0.015em; }
+  .int-band > p { font-size: 13px; color: var(--muted); justify-self: end; }
+  .tools { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .tool { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 64px; padding: 0 16px; background: #fff; border: 1px solid var(--border); border-radius: 16px; font: 500 16px/1 var(--font-body); }
+  .tool .ico { color: var(--accent); }
+
+  /* Soluções */
+  .grid-sol { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+  .card { background: var(--surface); border-radius: var(--radius-card); padding: clamp(22px, 2.4vw, 30px); display: flex; flex-direction: column; transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -26px rgba(23,23,23,.35); }
+  .grid-sol .card { grid-column: span 2; }
+  .grid-sol .card.wide { grid-column: span 3; }
+  .card-ico { width: 40px; height: 40px; border-radius: 12px; background: #fff; border: 1px solid var(--border); display: grid; place-items: center; color: var(--accent); margin-bottom: 20px; }
+  .card h3 { font-size: clamp(20px, 1rem + .4vw, 22px); line-height: 1.25; margin-bottom: 8px; }
+  .card > p { color: var(--muted); font-size: 15px; line-height: 1.55; margin-bottom: 24px; }
+
+  .ui { margin-top: auto; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow-ui); font-size: 12.5px; color: #3B3B3B; }
+  .ui-title { display: flex; align-items: center; gap: 8px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
+  .ui-title .ico { width: 16px; height: 16px; color: var(--accent); }
+  .ui-note { display: block; text-align: right; font-size: 11px; color: #8A8A8A; margin-top: 12px; }
+  .tabs { display: flex; gap: 4px; padding: 3px; background: var(--surface); border-radius: 10px; margin-bottom: 10px; }
+  .tabs span { flex: 1; text-align: center; padding: 5px 6px; border-radius: 8px; color: var(--muted); font-size: 11.5px; }
+  .tabs span.on { background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+  .rows li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 10px; margin-top: 6px; }
+  .rows li .meta { margin-left: auto; color: #8A8A8A; font-size: 11px; white-space: nowrap; }
+  .rows li .meta.hot { color: var(--accent-ink); font-weight: 500; }
+  .rows .avatars span { width: 22px; height: 22px; }
+  .search { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 10px; color: #8A8A8A; margin-bottom: 8px; }
+  .search .ico { width: 15px; height: 15px; }
+  .doc { display: flex; align-items: center; gap: 10px; padding: 8px 4px; }
+  .doc b { display: block; font-weight: 500; color: var(--text); }
+  .doc small { color: #8A8A8A; font-size: 11px; }
+  .vflow { position: relative; padding-left: 4px; }
+  .vflow li { position: relative; display: flex; align-items: center; gap: 10px; padding: 7px 0; }
+  .vflow li:not(:last-child)::after { content: ""; position: absolute; left: 12px; top: 34px; height: 14px; border-left: 1.5px dashed #F5B48D; }
+  .pills { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+  .pills span { padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); font-size: 11px; color: var(--muted); }
+  .pills span.on { background: var(--text); border-color: var(--text); color: #fff; }
+  .dash { display: grid; grid-template-columns: 112px 1fr; gap: 14px; }
+  .side li { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px; color: var(--muted); font-size: 11.5px; }
+  .side li .ico { width: 14px; height: 14px; }
+  .side li.on { background: var(--accent-soft); color: var(--accent-ink); font-weight: 500; }
+  .dash h4 { font: 500 12px/1.3 var(--font-body); letter-spacing: 0; margin-bottom: 8px; }
+  .procs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+  .procs div { border: 1px solid var(--border); border-radius: 10px; padding: 8px; }
+  .procs b { display: block; font-weight: 500; color: var(--text); font-size: 11.5px; }
+  .status { display: inline-block; margin: 4px 0 2px; padding: 1px 6px; border-radius: 6px; background: var(--accent-soft); color: var(--accent-ink); font-size: 10px; }
+  .procs small { display: block; color: #8A8A8A; font-size: 10.5px; }
+  .act li { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px solid var(--border); }
+  .act li:first-child { border-top: 0; }
+  .act small { display: block; color: #8A8A8A; font-size: 10.5px; }
+
+  /* Método */
+  .method { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+  .method-copy { position: sticky; top: 120px; }
+  .method-copy .h2 { margin: 12px 0 20px; }
+  .method-copy .lead { max-width: 440px; margin-bottom: 28px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span { padding: 8px 14px; border-radius: 999px; background: var(--surface); font-size: 13px; color: #3B3B3B; }
+  .steps { position: relative; }
+  .steps::before { content: ""; position: absolute; left: 5px; top: 24px; bottom: 24px; border-left: 1px solid #F3C9AE; }
+  .step { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 20px 0 20px 36px; }
+  .step::before { content: ""; position: absolute; left: 0; top: 46px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px #fff, 0 0 0 6px #F7D3BC; }
+  .step-ico { width: 64px; height: 64px; border-radius: 18px; background: var(--surface); display: grid; place-items: center; color: var(--accent); }
+  .step-ico .ico { width: 26px; height: 26px; stroke-width: 1.5; }
+  .step h3 { font-size: clamp(20px, 1rem + .4vw, 22px); margin: 4px 0 8px; }
+  .step p { color: var(--muted); font-size: 15.5px; }
+
+  /* Na prática */
+  .practice { position: relative; overflow: hidden; background: var(--surface); border-radius: 32px; padding: clamp(28px, 5vw, 64px); }
+  .practice .glow { top: -220px; right: -200px; width: 560px; height: 460px; opacity: .55; }
+  .practice-top { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; margin-bottom: clamp(32px, 4vw, 48px); }
+  .practice-top .h2 { margin: 12px 0 16px; max-width: 520px; }
+  .practice-top .lead { max-width: 440px; }
+  .checklist { justify-self: center; width: min(100%, 300px); transform: rotate(-3deg); background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 18px; box-shadow: var(--shadow-float); font-size: 13px; }
+  .checklist .checks li { border-top: 1px solid var(--border); padding: 9px 0; }
+  .checklist .checks li:first-child { border-top: 0; }
+  .pflow { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .pstep { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .pstep:not(:last-child)::after { content: ""; position: absolute; right: -22px; top: 36px; width: 16px; height: 16px; background: no-repeat center / 16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF7426' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E"); }
+  .pstep-head { display: flex; align-items: center; gap: 12px; }
+  .pstep-head .card-ico { margin: 0; width: 40px; height: 40px; background: var(--accent-soft); border: 0; }
+  .pstep h3 { font: 500 16px/1.25 var(--font-body); letter-spacing: 0; }
+  .pstep p { font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .pvis { margin-top: auto; border: 1px solid var(--border); border-radius: 12px; padding: 10px; font-size: 11.5px; color: #3B3B3B; }
+  .tline { display: grid; grid-template-columns: 34px 1fr; gap: 6px; padding: 3px 0; }
+  .tline span:first-child { color: #8A8A8A; }
+  .bar { height: 6px; border-radius: 999px; background: var(--surface); overflow: hidden; margin: 8px 0 6px; }
+  .bar i { display: block; height: 100%; width: 50%; background: var(--accent); border-radius: inherit; }
+  .pvis .checks li { padding: 3px 0; }
+  .pvis .cb { width: 13px; height: 13px; }
+
+  /* Contato */
+  .cta { position: relative; overflow: hidden; border-radius: 32px; background: #FFFBF7; border: 1px solid #F6E6DA; padding: clamp(56px, 8vw, 104px) 24px; text-align: center; }
+  .cta .glow-l { top: -240px; left: -220px; width: 640px; height: 520px; opacity: .7; }
+  .cta .glow-r { top: auto; bottom: -280px; right: -220px; width: 640px; height: 520px; opacity: .6; }
+  .cta > :not(.glow) { position: relative; z-index: 1; }
+  .cta .h2 { max-width: 620px; margin: 18px auto 16px; }
+  .cta .lead { max-width: 480px; margin: 0 auto 32px; }
+  .cta-alt { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .cta-alt a { color: var(--text); text-underline-offset: 3px; }
+
+  /* Rodapé */
+  .footer { padding: 48px 0 40px; }
+  .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .footer-nav { display: flex; gap: 8px 24px; flex-wrap: wrap; }
+  .footer a.fl { font-size: 14px; color: var(--muted); text-decoration: none; transition: color var(--dur) var(--ease); }
+  .footer a.fl:hover { color: var(--text); }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-top: 24px; font-size: 13px; color: var(--muted); }
+  .footer-bottom nav { display: flex; gap: 8px 20px; flex-wrap: wrap; }
+  .footer-bottom a.fl { font-size: 13px; }
+
+  /* Revelação ao rolar (só com JS) */
+  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  /* Responsivo */
+  @media (max-width: 1320px) {
+    .float { display: none; }
+  }
+  @media (max-width: 960px) {
+    .grid-sol { grid-template-columns: repeat(2, 1fr); }
+    .grid-sol .card, .grid-sol .card.wide { grid-column: span 1; }
+    .grid-sol .card.wide:last-child { grid-column: 1 / -1; }
+    .method, .practice-top { grid-template-columns: 1fr; }
+    .method-copy { position: static; }
+    .pflow { grid-template-columns: repeat(2, 1fr); }
+    .pstep:nth-child(2)::after { display: none; }
+    .tools { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 760px) {
+    :root { --gutter: 16px; }
+    .nav { display: none; }
+    .header-inner { grid-template-columns: 1fr auto; height: 64px; }
+    .hero { margin-top: -64px; padding-top: calc(64px + 40px); }
+    .cta-long { display: none; }
+    .int-band { grid-template-columns: 1fr; }
+    .int-band > p { justify-self: start; }
+    .grid-sol { grid-template-columns: 1fr; }
+    .grid-sol .card.wide:last-child { grid-column: auto; }
+    .dash { grid-template-columns: 1fr; }
+    .side { display: none; }
+    .pflow { grid-template-columns: 1fr; gap: 24px; }
+    .pstep::after { display: block !important; right: auto; left: 50%; top: auto; bottom: -21px; transform: translateX(-50%) rotate(90deg); }
+    .pstep:last-child::after { display: none !important; }
+    .checklist { transform: none; justify-self: start; }
+    .step { grid-template-columns: 52px 1fr; gap: 16px; padding-left: 30px; }
+    .step-ico { width: 52px; height: 52px; border-radius: 14px; }
+    .step::before { top: 40px; }
+    .hero-ctas .btn { width: 100%; }
+    .practice, .cta { border-radius: 24px; }
+  }
+  @media (max-width: 420px) {
+    .tools { grid-template-columns: 1fr; }
+    .procs { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 761px) { .cta-short { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    .js .reveal { opacity: 1; transform: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<x-dc>
-<helmet>
-  <meta name="description" content="MomboLabs cria agentes de IA, automações e integrações que conectam sistemas e eliminam tarefas manuais, tornando a operação da sua empresa mais inteligente." />
-  <title>MomboLabs — Inteligência que transforma operações</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mombolabs.com/" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="MomboLabs — Inteligência que transforma operações" />
-  <meta property="og:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
-  <meta property="og:image" content="https://mombolabs.com/images/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MomboLabs — Inteligência que transforma operações" />
-  <meta name="twitter:description" content="Automações, agentes de IA, integrações e sistemas personalizados que eliminam tarefas repetitivas e aceleram a operação do seu negócio." />
-  <meta name="twitter:image" content="https://mombolabs.com/images/og-image.png" />
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/styles.css">
-  <script src="_ds/mambolabs-design-system-aa0c678e-e5c6-4b53-bc0d-a94f20f69b06/_ds_bundle.js"></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"MomboLabs","description":"Automação de processos, agentes de IA e integração de sistemas para empresas.","areaServed":"BR"}
-  </script>
-  <style>
-    html { scrollbar-color: #CFCBD6 var(--bg); }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
-    a { color: var(--accent-ink); text-underline-offset: 3px; }
-    a:hover { color: var(--accent-ink); }
-    ::selection { background: var(--accent); color: var(--text); }
-    :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 4px; }
-    button, input, select, textarea { font-family: inherit; }
-    h1, h2, h3 { font-family: var(--font-display); }
-    input::placeholder, textarea::placeholder { color: var(--placeholder); opacity: 1; }
-    input, select, textarea { border-color: var(--border) !important; }
-    input:focus, select:focus, textarea:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-line); outline: none; }
 
-    /* Botão com contorno (secundário) */
-    .mb-outline { border: 1.5px solid var(--text) !important; color: var(--text) !important; background: transparent !important; }
-    .mb-outline:hover { background: var(--text) !important; color: var(--bg) !important; }
-    /* Botão do WhatsApp */
-    .mb-wa { background: var(--whatsapp) !important; color: var(--accent-contrast) !important; border-color: transparent !important; }
-    .mb-wa:hover { filter: brightness(0.95); }
-    button[style*="--accent-primary"]:hover, button[style*="var(--accent-primary)"]:hover { filter: brightness(0.96); }
+<!-- Ícones de traço fino -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8s4.9 1.8 5.5 4.8"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.3c2.2.2 3.6 1.7 4 4.2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1.5"/><rect x="3" y="16" width="6" height="5" rx="1.5"/><rect x="15" y="16" width="6" height="5" rx="1.5"/><path d="M12 8v4M6 16v-2h12v2"/></symbol>
+    <symbol id="i-check-square" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V12M12 20V5M19 20v-9"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="m16 10.5 5-3v9l-5-3"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7.5A1.5 1.5 0 0 0 6 4.5v15A1.5 1.5 0 0 0 7.5 21h9a1.5 1.5 0 0 0 1.5-1.5V7l-4-4Z"/><path d="M14 3v4h4M9 13h6M9 16.5h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5 10 14M20.5 3.5 14 20.5l-4-6.5-6.5-4 17-6.5Z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M4 10v4M8 6v12M12 9v6M16 4v16M20 10v4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7.5A1.5 1.5 0 0 1 5 6h4l2 2.2h8A1.5 1.5 0 0 1 20.5 9.7v8.8A1.5 1.5 0 0 1 19 20H5a1.5 1.5 0 0 1-1.5-1.5v-11Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5Z"/></symbol>
+    <symbol id="i-diagram" viewBox="0 0 24 24"><rect x="3.5" y="4" width="7" height="6" rx="1.5"/><rect x="13.5" y="14" width="7" height="6" rx="1.5"/><path d="M7 10v4.5a2 2 0 0 0 2 2h4.5"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M9.5 4v16M9.5 10h11"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3.5 13.5 6 5h12l2.5 8.5v5A1.5 1.5 0 0 1 19 20H5a1.5 1.5 0 0 1-1.5-1.5v-5Z"/><path d="M3.5 13.5h5l1.5 2.5h4l1.5-2.5h5"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5 13.8 10l6.7 2-6.7 2L12 20.5 10.2 14l-6.7-2 6.7-2L12 3.5Z"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3.5h6v1M9 11h6M9 15h4"/></symbol>
+  </defs>
+</svg>
 
-    /* Marca-texto em limão para ênfases em títulos */
-    .mb-mark { background: linear-gradient(transparent 60%, rgba(255,122,26,.38) 60%, rgba(255,122,26,.38) 94%, transparent 94%); padding: 0 .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+<header class="header" id="topo">
+  <div class="container header-inner">
+    <a class="brand" href="#inicio" aria-label="MomboLabs — início">
+      <img src="./images/mombolabs-mark.webp" alt="" width="41" height="30">
+      <span aria-hidden="true">Mombo<b>Labs</b></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#solucoes">Soluções</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-light btn-sm" data-wa href="https://wa.me/5516992061401" target="_blank" rel="noopener">
+      <span class="cta-long">Conversar sobre meu projeto</span><span class="cta-short">Conversar</span>
+      <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</header>
 
-    /* Acordeão do FAQ: ícone legível sobre fundo claro */
-    .mb-faq button { color: var(--text) !important; font-weight: 600 !important; font-size: var(--fs-18) !important; }
-    .mb-faq button > span { border: 1.5px solid var(--text) !important; color: var(--text) !important; font-weight: 600; }
-    .mb-faq button:hover > span, .mb-faq button[aria-expanded="true"] > span { background: var(--accent) !important; border-color: var(--accent) !important; color: var(--accent-contrast) !important; }
-    .mb-faq > div > div { border-bottom-color: var(--border) !important; }
-    .mb-faq p { color: var(--text-muted) !important; }
+<main>
+  <!-- 01 Abertura -->
+  <section class="hero" id="inicio">
+    <div class="glow glow-l" aria-hidden="true"></div>
+    <div class="glow glow-r" aria-hidden="true"></div>
+    <div class="container">
+      <div class="float float-l" aria-hidden="true">
+        <div class="float-top">
+          <span class="badge-ico"><svg class="ico"><use href="#i-video"/></svg></span>
+          <div><strong>Reunião com time</strong><small>Hoje · 10:00 – 11:00</small></div>
+        </div>
+        <ul class="checks">
+          <li><span class="cb on"></span>Alinhar projeto</li>
+          <li><span class="cb on"></span>Definir próximos passos</li>
+          <li><span class="cb"></span>Compartilhar materiais</li>
+        </ul>
+        <div class="float-foot">
+          <div class="avatars"><span>AL</span><span>RM</span><span>JS</span></div>
+          <span class="mic"><svg class="ico"><use href="#i-mic"/></svg></span>
+        </div>
+      </div>
 
-    /* Cartões: elevação no hover */
-    .mb-lift { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-standard); }
-    .mb-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--border-strong) !important; }
+      <div class="float float-r" aria-hidden="true">
+        <div class="float-top" style="justify-content: space-between">
+          <strong>Fluxo automatizado</strong>
+          <span class="mic"><svg class="ico"><use href="#i-bolt"/></svg></span>
+        </div>
+        <ul class="flow-list">
+          <li><span class="mini-ico"><svg class="ico"><use href="#i-file"/></svg></span>Transcrever reunião</li>
+          <li><span class="mini-ico ok"><svg class="ico"><use href="#i-check"/></svg></span>Criar tarefas no projeto</li>
+          <li><span class="mini-ico"><svg class="ico"><use href="#i-send"/></svg></span>Notificar equipe</li>
+        </ul>
+      </div>
 
-    /* Entrada escalonada do hero */
-    @keyframes mbRise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
-    .mb-rise { animation: mbRise .9s var(--ease-out) both; }
-    .mb-rise-1 { animation-delay: .05s } .mb-rise-2 { animation-delay: .15s } .mb-rise-3 { animation-delay: .25s } .mb-rise-4 { animation-delay: .38s }
+      <div class="hero-copy">
+        <span class="pill"><span class="tag">IA</span><i></i>Processos<i></i>Ferramentas conectadas</span>
+        <h1><span>Menos tarefas manuais.</span><span>Mais espaço para crescer.</span></h1>
+        <p class="lead">Conectamos IA, processos e ferramentas para simplificar a operação da sua empresa.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-dark" data-wa href="https://wa.me/5516992061401" target="_blank" rel="noopener">Conversar sobre meu projeto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-light" href="#solucoes">Conhecer as soluções</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    /* Revelação ao rolar (só onde o navegador suporta; sem suporte, tudo aparece normalmente) */
-    @supports (animation-timeline: view()) {
-      @keyframes mbReveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
-      [data-screen-label] h2, .mb-reveal { animation: mbReveal linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
-    }
+  <!-- 02 Integrações -->
+  <section class="integrations" aria-labelledby="int-title">
+    <div class="container">
+      <div class="int-band reveal">
+        <h2 id="int-title">Suas ferramentas, trabalhando juntas</h2>
+        <p>Conectamos o que sua empresa já usa.</p>
+        <ul class="tools">
+          <li class="tool"><svg class="ico" aria-hidden="true"><use href="#i-wave"/></svg>Plaud</li>
+          <li class="tool"><svg class="ico" aria-hidden="true"><use href="#i-folder"/></svg>Google Drive</li>
+          <li class="tool"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</li>
+          <li class="tool"><svg class="ico" aria-hidden="true"><use href="#i-diagram"/></svg>Lucid</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    @media (max-width: 860px) {
-      [data-screen-label] { padding-left: 16px !important; padding-right: 16px !important; padding-top: var(--section-py-mobile) !important; padding-bottom: var(--section-py-mobile) !important; }
-      #topo[data-screen-label] { padding-top: 112px !important; padding-bottom: 24px !important; }
-      .mb-split, .mb-grid-2, .mb-grid-3, .mb-grid-4, .mb-grid-5, .mb-row { grid-template-columns: 1fr !important; }
-      .mb-visual-grid { grid-template-columns: 1fr !important; }
-      .mb-hide-sm { display: none !important; }
-      header nav { display: none !important; }
-      header { padding: 12px 16px !important; }
-      header button { padding: 9px 14px !important; }
-      .mb-stage-tags { display: none !important; }
-      .mb-sticky { position: static !important; }
-      [data-screen-label] button { white-space: normal !important; text-align: left; }
-      .mb-stage { padding: 56px 18px 20px !important; border-radius: var(--radius-lg) !important; }
-    }
-    @media (min-width: 861px) and (max-width: 1080px) {
-      .mb-grid-3, .mb-grid-4, .mb-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
-    }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
-  </style>
-</helmet>
-<div style="background: var(--bg); overflow-x: clip">
-  <x-import component-from-global-scope="Icon" from="./sections/Icons.jsx" hint-size="0,0"></x-import>
-  <x-import component-from-global-scope="Header" from="./sections/Header.jsx" dc-props="{{ dsProps }}" hint-size="100%,72px"></x-import>
-  <x-import component-from-global-scope="Hero" from="./sections/Hero.jsx" dc-props="{{ dsProps }}" hint-size="100%,760px"></x-import>
-  <x-import component-from-global-scope="Problem" from="./sections/Problem.jsx" dc-props="{{ dsProps }}" hint-size="100%,760px"></x-import>
-  <x-import component-from-global-scope="ValueProp" from="./sections/ValueProp.jsx" hint-size="100%,480px"></x-import>
-  <x-import component-from-global-scope="Solutions" from="./sections/Solutions.jsx" dc-props="{{ dsProps }}" hint-size="100%,900px"></x-import>
-  <x-import component-from-global-scope="Examples" from="./sections/Examples.jsx" hint-size="100%,700px"></x-import>
-  <x-import component-from-global-scope="Benefits" from="./sections/Benefits.jsx" hint-size="100%,420px"></x-import>
-  <x-import component-from-global-scope="Journey" from="./sections/Journey.jsx" hint-size="100%,480px"></x-import>
-  <x-import component-from-global-scope="Differentiators" from="./sections/Differentiators.jsx" hint-size="100%,560px"></x-import>
-  <x-import component-from-global-scope="Pricing" from="./sections/Pricing.jsx" dc-props="{{ dsProps }}" hint-size="100%,600px"></x-import>
-  <x-import component-from-global-scope="Proof" from="./sections/ProofAbout.jsx" hint-size="100%,320px"></x-import>
-  <x-import component-from-global-scope="About" from="./sections/ProofAbout.jsx" hint-size="100%,400px"></x-import>
-  <x-import component-from-global-scope="Faq" from="./sections/Faq.jsx" dc-props="{{ dsProps }}" hint-size="100%,700px"></x-import>
-  <x-import component-from-global-scope="Contact" from="./sections/Contact.jsx" dc-props="{{ dsProps }}" hint-size="100%,600px"></x-import>
-  <x-import component-from-global-scope="Footer" from="./sections/Footer.jsx" hint-size="100%,320px"></x-import>
-</div>
+  <!-- 03 Soluções -->
+  <section class="section" id="solucoes" style="padding-top: 0" aria-labelledby="sol-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow"><svg class="ico" aria-hidden="true" style="width:14px;height:14px"><use href="#i-sparkle"/></svg>Soluções</span>
+        <h2 class="h2" id="sol-title">Da informação à ação.</h2>
+        <p class="lead">Soluções de IA e automação pensadas para a realidade do seu negócio, com menos fricção e mais resultado.</p>
+      </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    const ds = (typeof window !== 'undefined' && window.MamboLabsDesignSystem_aa0c67) || {};
-    return {
-      dsProps: {
-        Button: ds.Button, Input: ds.Input, Select: ds.Select, Textarea: ds.Textarea,
-        Accordion: ds.Accordion, Card: ds.Card, Badge: ds.Badge, Tag: ds.Tag
-      }
-    };
+      <div class="grid-sol">
+        <article class="card reveal">
+          <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span>
+          <h3>Reuniões que viram tarefas</h3>
+          <p>Transcreva, resuma e transforme conversas em tarefas automaticamente.</p>
+          <div class="ui" aria-hidden="true">
+            <div class="ui-title"><svg class="ico"><use href="#i-wave"/></svg>Resumo da reunião</div>
+            <div class="tabs"><span>Transcrição</span><span class="on">Resumo</span><span>Tarefas</span></div>
+            <ul class="rows">
+              <li><span class="cb"></span>Preparar proposta comercial</li>
+              <li><span class="cb"></span>Revisar escopo técnico</li>
+              <li><span class="cb"></span>Agendar próxima reunião</li>
+            </ul>
+            <span class="ui-note">Exemplo ilustrativo</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg></span>
+          <h3>Informação fácil de encontrar</h3>
+          <p>Centralize documentos e conversas, com busca inteligente.</p>
+          <div class="ui" aria-hidden="true">
+            <div class="search"><svg class="ico"><use href="#i-search"/></svg>Buscar na sua empresa…</div>
+            <div class="doc"><span class="mini-ico ok"><svg class="ico"><use href="#i-file"/></svg></span><div><b>Apresentação_Proposta.pdf</b><small>Drive · 2 dias atrás</small></div></div>
+            <div class="doc"><span class="mini-ico"><svg class="ico"><use href="#i-wave"/></svg></span><div><b>Notas da reunião</b><small>Plaud · 3 dias atrás</small></div></div>
+            <div class="doc"><span class="mini-ico"><svg class="ico"><use href="#i-file"/></svg></span><div><b>Planejamento do trimestre</b><small>Documentos · 5 dias atrás</small></div></div>
+            <span class="ui-note">Exemplo ilustrativo</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-network"/></svg></span>
+          <h3>Processos conectados</h3>
+          <p>Automatize etapas e elimine tarefas manuais entre sistemas.</p>
+          <div class="ui" aria-hidden="true">
+            <ul class="vflow">
+              <li><span class="mini-ico"><svg class="ico"><use href="#i-inbox"/></svg></span>Nova informação recebida</li>
+              <li><span class="mini-ico"><svg class="ico"><use href="#i-sparkle"/></svg></span>Processar com IA</li>
+              <li><span class="mini-ico ok"><svg class="ico"><use href="#i-check"/></svg></span>Criar tarefa</li>
+              <li><span class="mini-ico ok"><svg class="ico"><use href="#i-send"/></svg></span>Notificar equipe</li>
+            </ul>
+            <span class="ui-note">Exemplo ilustrativo</span>
+          </div>
+        </article>
+
+        <article class="card wide reveal">
+          <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-check-square"/></svg></span>
+          <h3>Pendências sob controle</h3>
+          <p>Visualize o que precisa ser feito, por quem e quando.</p>
+          <div class="ui" aria-hidden="true">
+            <div class="ui-title">Minhas tarefas</div>
+            <div class="pills"><span class="on">Todas (4)</span><span>Em andamento (2)</span><span>Concluídas (2)</span></div>
+            <ul class="rows">
+              <li><span class="cb on"></span>Revisar proposta comercial<span class="meta hot">Hoje</span><span class="avatars"><span>AL</span></span></li>
+              <li><span class="cb on"></span>Ajustar apresentação<span class="meta">Amanhã</span><span class="avatars"><span>RM</span></span></li>
+              <li><span class="cb"></span>Retornar ao cliente<span class="meta">12 jun</span><span class="avatars"><span>JS</span></span></li>
+              <li><span class="cb"></span>Preparar materiais da reunião<span class="meta">12 jun</span><span class="avatars"><span>AL</span></span></li>
+            </ul>
+            <span class="ui-note">Exemplo ilustrativo</span>
+          </div>
+        </article>
+
+        <article class="card wide reveal">
+          <span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span>
+          <h3>Visão clara da operação</h3>
+          <p>Acompanhe o andamento dos seus processos em um só lugar.</p>
+          <div class="ui" aria-hidden="true">
+            <div class="dash">
+              <ul class="side">
+                <li class="on"><svg class="ico"><use href="#i-layout"/></svg>Visão geral</li>
+                <li><svg class="ico"><use href="#i-folder"/></svg>Projetos</li>
+                <li><svg class="ico"><use href="#i-check-square"/></svg>Tarefas</li>
+                <li><svg class="ico"><use href="#i-file"/></svg>Documentos</li>
+                <li><svg class="ico"><use href="#i-gear"/></svg>Automação</li>
+              </ul>
+              <div>
+                <h4>Processos ativos</h4>
+                <div class="procs">
+                  <div><b>Comercial</b><span class="status">Em andamento</span><small>3 processos</small></div>
+                  <div><b>Operações</b><span class="status">Em andamento</span><small>5 processos</small></div>
+                  <div><b>Atendimento</b><span class="status">Em andamento</span><small>2 processos</small></div>
+                </div>
+                <h4>Atividades recentes</h4>
+                <ul class="act">
+                  <li><span class="mini-ico ok"><svg class="ico"><use href="#i-check"/></svg></span><div>Tarefa criada automaticamente<small>Hoje · 10:24</small></div></li>
+                  <li><span class="mini-ico"><svg class="ico"><use href="#i-file"/></svg></span><div>Documento processado<small>Hoje · 09:18</small></div></li>
+                </ul>
+              </div>
+            </div>
+            <span class="ui-note">Exemplo ilustrativo</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Método -->
+  <section class="section" id="como-funciona" style="padding-top: 0" aria-labelledby="met-title">
+    <div class="container method">
+      <div class="method-copy reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="h2" id="met-title">A tecnologia acompanha o seu processo.</h2>
+        <p class="lead">Adaptamos a automação à sua realidade, com um time consultivo que entende seus desafios e constrói soluções sob medida.</p>
+        <div class="tags"><span>Processos mais ágeis</span><span>Menos retrabalho</span><span>Mais foco no que importa</span><span>Soluções sob medida</span></div>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-ico"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg></span>
+          <div><h3>Entendemos a operação</h3><p>Mapeamos seus processos, identificamos oportunidades e desenhamos a melhor solução para o seu contexto.</p></div>
+        </li>
+        <li class="step reveal">
+          <span class="step-ico"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg></span>
+          <div><h3>Conectamos as ferramentas</h3><p>Integramos suas ferramentas e configuramos automações que fazem sentido para o seu dia a dia.</p></div>
+        </li>
+        <li class="step reveal">
+          <span class="step-ico"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span>
+          <div><h3>Acompanhamos e melhoramos</h3><p>Monitoramos o funcionamento, ajustamos os fluxos e evoluímos continuamente junto com o seu time.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 05 Na prática -->
+  <section class="section" style="padding-top: 0" aria-labelledby="pra-title">
+    <div class="container">
+      <div class="practice">
+        <div class="glow glow-r" aria-hidden="true"></div>
+        <div class="practice-top">
+          <div class="reveal">
+            <span class="eyebrow"><svg class="ico" aria-hidden="true" style="width:14px;height:14px"><use href="#i-chart"/></svg>Na prática</span>
+            <h2 class="h2" id="pra-title">O combinado na reunião ganha continuidade.</h2>
+            <p class="lead">Da conversa às entregas, com menos barreiras e mais execução.</p>
+          </div>
+          <div class="checklist reveal" aria-hidden="true">
+            <div class="ui-title">Checklist da reunião</div>
+            <ul class="checks">
+              <li><span class="cb on"></span>Transcrição gerada</li>
+              <li><span class="cb on"></span>Resumo pronto</li>
+              <li><span class="cb on"></span>Tarefas criadas</li>
+              <li><span class="cb on"></span>Equipe notificada</li>
+            </ul>
+          </div>
+        </div>
+
+        <ol class="pflow">
+          <li class="pstep reveal">
+            <div class="pstep-head"><span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><h3>Reunião</h3></div>
+            <p>A conversa é gravada e transcrita com IA.</p>
+            <div class="pvis" aria-hidden="true">
+              <div class="tline"><span>02:14</span><span>Fechamos a proposta até sexta.</span></div>
+              <div class="tline"><span>05:40</span><span>Revisar o escopo com o time técnico.</span></div>
+            </div>
+          </li>
+          <li class="pstep reveal">
+            <div class="pstep-head"><span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg></span><h3>Validação</h3></div>
+            <p>O resumo e os compromissos são revisados.</p>
+            <div class="pvis" aria-hidden="true">
+              <ul class="checks">
+                <li><span class="cb on"></span>Proposta até sexta</li>
+                <li><span class="cb on"></span>Revisão do escopo</li>
+              </ul>
+            </div>
+          </li>
+          <li class="pstep reveal">
+            <div class="pstep-head"><span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-check-square"/></svg></span><h3>Tarefas</h3></div>
+            <p>As ações são criadas automaticamente, com responsável e prazo.</p>
+            <div class="pvis" aria-hidden="true">
+              <ul class="checks">
+                <li><span class="cb"></span>Enviar proposta · AL</li>
+                <li><span class="cb"></span>Revisar escopo · RM</li>
+              </ul>
+            </div>
+          </li>
+          <li class="pstep reveal">
+            <div class="pstep-head"><span class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></span><h3>Acompanhamento</h3></div>
+            <p>O time executa e você acompanha as pendências.</p>
+            <div class="pvis" aria-hidden="true">
+              <div>2 de 4 concluídas</div>
+              <div class="bar"><i></i></div>
+              <div style="color:#8A8A8A">Próxima entrega: sexta</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Contato -->
+  <section class="section" id="contato" style="padding-top: 0" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta reveal">
+        <div class="glow glow-l" aria-hidden="true"></div>
+        <div class="glow glow-r" aria-hidden="true"></div>
+        <span class="pill"><span class="tag">Vamos conversar?</span></span>
+        <h2 class="h2" id="cta-title">Qual processo está tomando o seu tempo?</h2>
+        <p class="lead">Fale com um especialista e descubra como a MomboLabs pode simplificar a sua operação.</p>
+        <a class="btn btn-dark" data-wa href="https://wa.me/5516992061401" target="_blank" rel="noopener">Conversar com a MomboLabs <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="cta-alt">WhatsApp (16) 99206-1401 · <a href="mailto:contato@mombolabs.com">contato@mombolabs.com</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a class="brand" href="#inicio" aria-label="MomboLabs — início">
+        <img src="./images/mombolabs-mark.webp" alt="" width="41" height="30">
+        <span aria-hidden="true">Mombo<b>Labs</b></span>
+      </a>
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a class="fl" href="#solucoes">Soluções</a>
+        <a class="fl" href="#como-funciona">Como funciona</a>
+        <a class="fl" href="#contato">Contato</a>
+        <a class="fl" data-wa href="https://wa.me/5516992061401" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MomboLabs. Todos os direitos reservados.</span>
+      <nav aria-label="Legal">
+        <a class="fl" href="./privacidade.html">Política de privacidade</a>
+        <a class="fl" href="./termos.html">Termos de serviço</a>
+        <a class="fl" href="./exclusao-de-dados.html">Exclusão de dados</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mensagem inicial nos links de WhatsApp
+  var waText = encodeURIComponent('Olá, MomboLabs! Vim pelo site e gostaria de conversar sobre um projeto.');
+  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/5516992061401?text=' + waText; });
+
+  // Borda do cabeçalho ao rolar
+  var header = document.querySelector('.header');
+  var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Revelação ao rolar
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
   }
-}
-
 </script>
 </body>
 </html>
